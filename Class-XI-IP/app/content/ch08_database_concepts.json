@@ -1,0 +1,308 @@
+{
+  "chapter": 8,
+  "title": "Database Concepts",
+  "unit": "III",
+  "topics": [
+    {
+      "id": "what-is-a-database",
+      "title": "What is a Database?",
+      "content": "A database is an organised collection of related data stored so it can be easily accessed, managed, and updated. Think of it like a school's organised filing system — instead of paper files scattered in different classrooms, all student records (name, roll number, marks, attendance) are stored in one place and can be retrieved in seconds. Without a database, we store data in flat files (like separate Excel sheets for each class), which leads to serious problems: data is repeated in multiple files (redundancy), inconsistency arises when one copy is updated but others are not, and sharing data between departments becomes difficult. A database solves all these problems by centralising data storage with proper structure and control."
+    },
+    {
+      "id": "dbms-database-management-system",
+      "title": "DBMS — Database Management System",
+      "content": "A DBMS (Database Management System) is software that manages databases — it acts as a middleman between the database and users or applications, handling all requests for data. Popular DBMS software includes MySQL (free and open-source, used by Facebook and Twitter), Oracle (used by large enterprises), Microsoft SQL Server, and SQLite (lightweight, used in mobile apps). The key advantages of using a DBMS over flat files are: reduced data redundancy (each fact is stored only once), easy data sharing (multiple users and departments access the same database simultaneously), data integrity (rules ensure only valid data is entered, e.g., age cannot be negative), data security (access control ensures only authorised users see sensitive data), built-in backup and recovery mechanisms, and data independence (changing how data is stored does not break the programs that use it)."
+    },
+    {
+      "id": "data-models",
+      "title": "Data Models",
+      "content": "A data model defines how data is structured, stored, and related to each other within a database. There are three classic record-based data models. The Hierarchical model organises data in a tree structure with parent-child relationships — like a school organisational chart where Principal is at the top, then HODs, then teachers; it is fast for simple queries but inflexible when data does not fit a strict hierarchy. The Network model organises data as a graph where records can be linked in multiple ways, making it more flexible than hierarchical but much more complex to manage. The Relational model, proposed by Edgar Codd in 1970, stores data in simple tables of rows and columns, and is by far the most widely used model today — MySQL, Oracle, and SQL Server all implement the relational model. The relational model is preferred because it is simple to understand, flexible, and supports powerful query languages like SQL."
+    },
+    {
+      "id": "relational-model-tables-terminology",
+      "title": "Relational Data Model — Tables and Terminology",
+      "content": "In the relational data model, data is stored in two-dimensional tables called relations. Each table has rows and columns: each row is called a tuple and represents one complete record (for example, one student's data — roll number, name, class, marks), and each column is called an attribute and represents one field or property (for example, the 'Marks' column). The domain of an attribute is the set of all allowed values for that column — for example, the domain of an Age column might be integers from 1 to 150. Degree refers to the number of columns (attributes) in a table. Cardinality refers to the number of rows (tuples) in a table. For example, if a Student table has 5 columns (RollNo, Name, Class, Section, Marks) and contains data for 30 students, then its degree is 5 and cardinality is 30."
+    },
+    {
+      "id": "keys-in-relational-database",
+      "title": "Keys in Relational Databases",
+      "content": "Keys are used to uniquely identify rows in a table and to create relationships between tables. A Primary Key is an attribute (or set of attributes) that uniquely identifies each row — it must never be NULL and must be unique for every row (for example, RollNo in a Student table, or Aadhaar number as a citizen's primary key). A Super Key is any set of attributes that can uniquely identify a row — {RollNo}, {RollNo, Name}, and {Aadhaar} are all super keys, but some contain unnecessary extra columns. A Candidate Key is a minimal super key — removing any attribute from it would lose the ability to uniquely identify rows, so candidate keys contain no unnecessary columns. An Alternate Key is any candidate key that was not chosen as the primary key. A Foreign Key is an attribute in one table that refers to the Primary Key of another table — it creates a link between the two tables; for example, a ClassID column in the Student table could be a foreign key referencing the ClassID primary key in a Class table, ensuring every student is assigned to a valid class."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Database",
+      "definition": "An organised collection of related data stored electronically so it can be easily accessed, managed, updated, and shared by authorised users and applications."
+    },
+    {
+      "term": "DBMS (Database Management System)",
+      "definition": "Software that acts as an interface between the database and its users or applications, managing storage, retrieval, security, and integrity of the data."
+    },
+    {
+      "term": "Relation (Table)",
+      "definition": "In the relational model, a two-dimensional structure with rows and columns used to store data about one entity (e.g., a Student table stores all student records)."
+    },
+    {
+      "term": "Tuple (Row)",
+      "definition": "A single horizontal record in a table. Each tuple represents one instance of the entity — for example, one student's complete record (roll number, name, marks)."
+    },
+    {
+      "term": "Attribute (Column)",
+      "definition": "A single vertical field in a table representing one property of the entity — for example, the 'Marks' column in a Student table. Each attribute has a defined data type and domain."
+    },
+    {
+      "term": "Domain",
+      "definition": "The set of all valid values that an attribute can hold. For example, the domain of an 'Age' attribute might be integers from 1 to 150; any value outside this range would be invalid."
+    },
+    {
+      "term": "Degree",
+      "definition": "The number of columns (attributes) in a table. A Student table with columns RollNo, Name, Class, and Marks has degree 4."
+    },
+    {
+      "term": "Cardinality",
+      "definition": "The number of rows (tuples) currently stored in a table. If a Student table has records for 30 students, its cardinality is 30."
+    },
+    {
+      "term": "Primary Key",
+      "definition": "An attribute or set of attributes that uniquely identifies every row in a table. It must be NOT NULL and unique for all rows — for example, RollNo in a Student table."
+    },
+    {
+      "term": "Super Key",
+      "definition": "Any set of attributes that can uniquely identify a row in a table. A primary key is a super key, but a super key may include extra unnecessary attributes."
+    },
+    {
+      "term": "Candidate Key",
+      "definition": "A minimal super key — it can uniquely identify rows, and removing any attribute from it would destroy that uniqueness. A table may have multiple candidate keys."
+    },
+    {
+      "term": "Alternate Key",
+      "definition": "A candidate key that was not selected as the primary key. For example, if both RollNo and Aadhaar can uniquely identify students, and RollNo is chosen as primary key, then Aadhaar is an alternate key."
+    },
+    {
+      "term": "Foreign Key",
+      "definition": "An attribute in one table that refers to the Primary Key of another table, creating a link between the two tables and enforcing referential integrity."
+    },
+    {
+      "term": "Data Redundancy",
+      "definition": "The unnecessary repetition of the same data in multiple places. It wastes storage space and causes inconsistency when updates are applied to some copies but not others."
+    },
+    {
+      "term": "Data Integrity",
+      "definition": "The accuracy and consistency of data in a database, enforced through rules and constraints that prevent invalid data from being stored."
+    }
+  ],
+  "summary": "A database is an organised collection of related data managed by a DBMS (Database Management System), which provides advantages over simple flat files including reduced redundancy, easy data sharing, security, and integrity enforcement. The most widely used data model is the relational model, proposed by Edgar Codd in 1970, which stores data in tables called relations. Each table has rows (tuples) representing individual records and columns (attributes) representing properties of those records. Key terminology includes degree (number of columns), cardinality (number of rows), and domain (valid values for an attribute). Tables are linked through keys: a primary key uniquely identifies each row, candidate keys are minimal unique identifiers, alternate keys are unused candidate keys, and foreign keys create relationships between tables. Understanding these concepts forms the foundation for working with databases using SQL.",
+  "mcqs": [
+    {
+      "id": "ch08_q001",
+      "topic": "Relational Data Model",
+      "question": "What is cardinality of a table in the relational model?",
+      "options": [
+        "The number of columns in the table",
+        "The number of rows in the table",
+        "The number of primary keys in the table",
+        "The number of tables in the database"
+      ],
+      "correct_index": 1,
+      "explanation": "Cardinality refers to the number of rows (tuples) currently stored in a table. If a Student table has 30 student records, its cardinality is 30. Degree, not cardinality, refers to the number of columns.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch08_q002",
+      "topic": "Relational Data Model",
+      "question": "What is the degree of a table in a relational database?",
+      "options": [
+        "The number of rows (tuples) in the table",
+        "The number of columns (attributes) in the table",
+        "The number of foreign keys in the table",
+        "The total number of records in the database"
+      ],
+      "correct_index": 1,
+      "explanation": "Degree refers to the number of columns (attributes) in a table. A Student table with columns RollNo, Name, Class, and Marks has degree 4. The number of rows is called cardinality.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch08_q003",
+      "topic": "Keys in Relational Databases",
+      "question": "Which type of key must be NOT NULL and unique for every row in a table?",
+      "options": [
+        "Foreign Key",
+        "Alternate Key",
+        "Super Key",
+        "Primary Key"
+      ],
+      "correct_index": 3,
+      "explanation": "A Primary Key uniquely identifies each row in a table and has two mandatory properties: it must never contain a NULL value, and it must be unique — no two rows can have the same primary key value.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch08_q004",
+      "topic": "Keys in Relational Databases",
+      "question": "A Student table has columns RollNo, Aadhaar, Name, and Marks. Both RollNo and Aadhaar can uniquely identify students. If RollNo is chosen as the Primary Key, what is Aadhaar called?",
+      "options": [
+        "Foreign Key",
+        "Super Key",
+        "Alternate Key",
+        "Domain Key"
+      ],
+      "correct_index": 2,
+      "explanation": "When a table has multiple candidate keys (attributes that can each uniquely identify rows), one is selected as the primary key and the rest are called alternate keys. Here, Aadhaar is an alternate key.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q005",
+      "topic": "Keys in Relational Databases",
+      "question": "Which of the following best defines a Candidate Key?",
+      "options": [
+        "Any set of attributes that can uniquely identify rows, including those with extra columns",
+        "The primary key chosen by the database administrator",
+        "A minimal super key — removing any attribute from it would lose the ability to uniquely identify rows",
+        "An attribute in one table that refers to the primary key of another table"
+      ],
+      "correct_index": 2,
+      "explanation": "A candidate key is a minimal super key. It can uniquely identify rows, but unlike a super key, it contains no unnecessary extra attributes. Removing any attribute from a candidate key would break its uniqueness.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q006",
+      "topic": "Keys in Relational Databases",
+      "question": "A Library database has a Books table (BookID, Title, AuthorID) and an Authors table (AuthorID, AuthorName). What is AuthorID in the Books table called?",
+      "options": [
+        "Primary Key",
+        "Candidate Key",
+        "Foreign Key",
+        "Alternate Key"
+      ],
+      "correct_index": 2,
+      "explanation": "AuthorID in the Books table refers to the Primary Key (AuthorID) of the Authors table. An attribute in one table that references the primary key of another table is called a Foreign Key.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q007",
+      "topic": "DBMS",
+      "question": "Which of the following is NOT an advantage of using a DBMS over flat files?",
+      "options": [
+        "Reduced data redundancy",
+        "Data can only be accessed by one user at a time",
+        "Data security through access control",
+        "Built-in backup and recovery"
+      ],
+      "correct_index": 1,
+      "explanation": "A DBMS actually allows multiple users to access data simultaneously — this is one of its key advantages (data sharing). All other options (reduced redundancy, security, backup) are genuine DBMS advantages.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q008",
+      "topic": "Relational Data Model",
+      "question": "What does a tuple represent in a relational database table?",
+      "options": [
+        "A single column in the table",
+        "A single row or record in the table",
+        "The name of the table",
+        "The primary key of the table"
+      ],
+      "correct_index": 1,
+      "explanation": "In relational database terminology, a tuple is a single row (record) in a table. Each tuple represents one instance of the entity — for example, one student's complete record in a Student table.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch08_q009",
+      "topic": "Data Models",
+      "question": "Which data model organises data in a tree structure with parent-child relationships?",
+      "options": [
+        "Relational Model",
+        "Network Model",
+        "Hierarchical Model",
+        "Object-Oriented Model"
+      ],
+      "correct_index": 2,
+      "explanation": "The Hierarchical model organises data as a tree structure where each record has one parent and can have multiple children — like a school chart with Principal at the top, then department heads, then teachers.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch08_q010",
+      "topic": "Keys in Relational Databases",
+      "question": "For a Student table with columns RollNo, Aadhaar, and Name — which of the following is a Super Key but NOT a Candidate Key?",
+      "options": [
+        "{RollNo}",
+        "{Aadhaar}",
+        "{RollNo, Aadhaar}",
+        "{Name}"
+      ],
+      "correct_index": 2,
+      "explanation": "{RollNo, Aadhaar} can uniquely identify rows, so it is a super key. But it is NOT minimal — removing either attribute still leaves a unique identifier. Candidate keys must be minimal, so {RollNo} and {Aadhaar} are candidate keys but {RollNo, Aadhaar} is only a super key.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch08_q011",
+      "topic": "Data Models",
+      "question": "Who proposed the relational data model and in which year?",
+      "options": [
+        "Bill Gates, 1985",
+        "Edgar Codd, 1970",
+        "Tim Berners-Lee, 1991",
+        "Charles Babbage, 1837"
+      ],
+      "correct_index": 1,
+      "explanation": "The relational data model was proposed by Edgar F. Codd in 1970 while working at IBM. His paper 'A Relational Model of Data for Large Shared Data Banks' revolutionised database design.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q012",
+      "topic": "Keys in Relational Databases",
+      "question": "In a bank database with a Customer table, which field would be most suitable as a Primary Key?",
+      "options": [
+        "CustomerName (customer's full name)",
+        "PhoneNumber (mobile number)",
+        "AccountNumber (unique bank account number)",
+        "City (city where customer lives)"
+      ],
+      "correct_index": 2,
+      "explanation": "A primary key must be unique and NOT NULL. AccountNumber is assigned uniquely to every customer by the bank and never repeats, making it ideal. Names may not be unique, phone numbers can change, and City is not unique at all.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q013",
+      "topic": "What is a Database",
+      "question": "What problem does data redundancy cause in flat-file systems?",
+      "options": [
+        "Data is stored too compactly and cannot be retrieved",
+        "The same data stored in multiple files can become inconsistent when updated in only some copies",
+        "The database becomes too fast and overloads the server",
+        "Users cannot share any data between departments"
+      ],
+      "correct_index": 1,
+      "explanation": "Data redundancy means the same data is stored in multiple places. The key problem is inconsistency — if a student's marks are stored in three different files and you update only one, the other two still show the old value, creating conflicting data.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q014",
+      "topic": "Relational Data Model",
+      "question": "A Student table has columns: RollNo, Name, Class, Section, and Marks. What are its degree and cardinality if it has 40 rows?",
+      "options": [
+        "Degree = 40, Cardinality = 5",
+        "Degree = 5, Cardinality = 40",
+        "Degree = 5, Cardinality = 5",
+        "Degree = 40, Cardinality = 40"
+      ],
+      "correct_index": 1,
+      "explanation": "Degree = number of columns = 5 (RollNo, Name, Class, Section, Marks). Cardinality = number of rows = 40. Degree measures the width of the table; cardinality measures the height.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch08_q015",
+      "topic": "DBMS",
+      "question": "Which of the following is a free, open-source DBMS widely used by websites like Facebook and Twitter?",
+      "options": [
+        "Oracle Database",
+        "Microsoft SQL Server",
+        "MySQL",
+        "IBM DB2"
+      ],
+      "correct_index": 2,
+      "explanation": "MySQL is a free, open-source DBMS widely used for web applications — Facebook, Twitter, and YouTube have all used MySQL. Oracle and Microsoft SQL Server are commercial products; IBM DB2 is an enterprise system.",
+      "difficulty": "Easy"
+    }
+  ],
+  "coding_challenges": []
+}

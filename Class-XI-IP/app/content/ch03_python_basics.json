@@ -1,0 +1,313 @@
+{
+  "chapter": 3,
+  "title": "Python Basics",
+  "slug": "python-basics",
+  "unit": "II",
+  "topics": [
+    {
+      "id": "character-set-and-tokens",
+      "title": "Character Set and Tokens",
+      "content": "Every Python program is built from characters — letters (A to Z, a to z), digits (0 to 9), special characters (like @, #, $, *, +), and whitespace characters (space, tab, newline). A token is the smallest individual unit that Python can recognise and process in a program. There are five types of tokens in Python: keywords, identifiers, literals, operators, and punctuators. Think of tokens like the individual words and punctuation marks in a sentence — just as a sentence is made of words, a Python program is made of tokens."
+    },
+    {
+      "id": "keywords-and-identifiers",
+      "title": "Keywords and Identifiers",
+      "content": "Keywords are special reserved words that have a fixed meaning in Python — you cannot use them as variable names. Python 3 has 35 keywords, including if, else, for, while, def, return, True, False, None, and, or, not, import, class, and others. Identifiers are the names that programmers give to variables, functions, and classes. Rules for writing identifiers: they must start with a letter (a-z, A-Z) or an underscore (_), can contain letters, digits, and underscores but no spaces or special symbols, cannot be a keyword, and are case-sensitive (so 'score' and 'Score' are two different identifiers). Good identifier names make your code easier to understand."
+    },
+    {
+      "id": "variables-and-literals",
+      "title": "Variables and Literals",
+      "content": "A variable is a named container that stores a value in the computer's memory. In Python, you create a variable simply by giving it a name and assigning a value with the = sign — for example, 'marks = 95' or 'name = \"Priya\"'. Python automatically figures out the data type, so you do not need to declare it. Literals are fixed values written directly in the code — for example, 42 (integer literal), 3.14 (float literal), \"hello\" (string literal), True (boolean literal), and None (meaning no value). Python also supports multiple assignment in one line: 'a = b = c = 10' sets all three to 10, and 'x, y, z = 1, 2, 3' assigns different values to each."
+    },
+    {
+      "id": "comments",
+      "title": "Comments",
+      "content": "A comment is a note written in the code for humans to read — Python completely ignores it during execution. Single-line comments start with the # symbol; everything on that line after # is ignored by Python. For example: '# This calculates the total marks'. Multi-line comments can be written using triple quotes (''' or \"\"\"), though technically these create multi-line strings that are not assigned to anything. Writing good comments is an excellent habit — they help you (and others) understand what the code does, especially when you revisit it months later."
+    },
+    {
+      "id": "input-function",
+      "title": "The input() Function",
+      "content": "The input() function lets your program pause and wait for the user to type something on the keyboard. The text you provide inside input() is shown as a prompt to guide the user — for example, 'name = input(\"Enter your name: \")'. A very important rule: input() ALWAYS returns the typed value as a string, even if the user types a number. So if a user types 50, Python sees it as the string \"50\", not the number 50. To use it as a number, you must convert it: 'marks = int(input(\"Enter marks: \"))' for whole numbers, or 'height = float(input(\"Enter height: \"))' for decimal numbers."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Token",
+      "definition": "The smallest individual unit that Python recognises in a program. There are five types: keywords, identifiers, literals, operators, and punctuators."
+    },
+    {
+      "term": "Keyword",
+      "definition": "A reserved word with a fixed, special meaning in Python that cannot be used as a variable name. Examples: if, else, for, while, def, return, True, False, None."
+    },
+    {
+      "term": "Identifier",
+      "definition": "A programmer-defined name for a variable, function, or class. Must start with a letter or underscore, cannot contain spaces, cannot be a keyword, and is case-sensitive."
+    },
+    {
+      "term": "Literal",
+      "definition": "A fixed value written directly in the code. Types include numeric (42, 3.14), string ('hello'), boolean (True, False), and None."
+    },
+    {
+      "term": "Variable",
+      "definition": "A named storage location in memory that holds a value. Created by assigning a value with =, for example: score = 95. Python automatically determines the data type."
+    },
+    {
+      "term": "Comment",
+      "definition": "A note in the code that Python ignores during execution. Single-line comments start with #. Used to explain code to human readers."
+    },
+    {
+      "term": "Expression",
+      "definition": "A combination of values, variables, and operators that Python evaluates to produce a result. For example, 5 + 3 is an expression that evaluates to 8."
+    },
+    {
+      "term": "Statement",
+      "definition": "A complete instruction that Python can execute. For example, 'marks = 95' is an assignment statement. A program is a sequence of statements."
+    },
+    {
+      "term": "Character Set",
+      "definition": "The set of all characters that can be used in a Python program: letters (A-Z, a-z), digits (0-9), special symbols, and whitespace (space, tab, newline)."
+    },
+    {
+      "term": "input() Function",
+      "definition": "A built-in Python function that pauses the program and waits for the user to type something. Always returns the typed value as a string, regardless of what was typed."
+    },
+    {
+      "term": "lvalue",
+      "definition": "An expression that refers to a memory location and can appear on the left side of an assignment. Variables are lvalues — for example, 'marks' in 'marks = 95'."
+    },
+    {
+      "term": "rvalue",
+      "definition": "A value or expression that appears on the right side of an assignment. It provides the data to be stored. For example, 95 in 'marks = 95' is an rvalue."
+    }
+  ],
+  "summary": "Every Python program is made of characters that form tokens — the building blocks of code. Tokens include keywords (reserved words like if, for, def), identifiers (programmer-chosen names for variables and functions), literals (fixed values like 42 or 'hello'), operators, and punctuators. Variable names (identifiers) must follow strict rules: start with a letter or underscore, no spaces, cannot be a keyword, and are case-sensitive. Variables are created simply by assigning a value with =, and Python determines the type automatically. Comments (starting with #) are notes for humans that Python ignores. The input() function collects user input but always returns a string, so use int() or float() to convert when you need numbers.",
+  "mcqs": [
+    {
+      "id": "ch03_q001",
+      "topic": "Keywords and Identifiers",
+      "question": "Which of the following is a valid Python identifier?",
+      "options": [
+        "2marks",
+        "my marks",
+        "_total_score",
+        "for"
+      ],
+      "correct_index": 2,
+      "explanation": "'_total_score' is valid because identifiers can start with an underscore and contain letters and underscores. '2marks' is invalid (starts with a digit), 'my marks' is invalid (contains a space), and 'for' is a Python keyword.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q002",
+      "topic": "Keywords and Identifiers",
+      "question": "Which of the following is a Python keyword?",
+      "options": [
+        "total",
+        "name",
+        "while",
+        "score"
+      ],
+      "correct_index": 2,
+      "explanation": "'while' is a Python keyword used to create loops — it has a special, reserved meaning. 'total', 'name', and 'score' are ordinary identifiers that a programmer can freely use as variable names.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch03_q003",
+      "topic": "The input() Function",
+      "question": "Priya types this code: age = input(\"Enter your age: \"). She enters 15. What is the data type of age?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "correct_index": 2,
+      "explanation": "input() ALWAYS returns a string (str), no matter what the user types. Even though 15 looks like a number, Python stores it as the string '15'. To use it as a number, she must write: age = int(input('Enter your age: ')).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch03_q004",
+      "topic": "Comments",
+      "question": "Which symbol is used to write a single-line comment in Python?",
+      "options": [
+        "//",
+        "/*",
+        "#",
+        "--"
+      ],
+      "correct_index": 2,
+      "explanation": "In Python, the # symbol marks the start of a single-line comment. Everything after # on that line is ignored by Python. Languages like C++ use //, but Python uses #.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch03_q005",
+      "topic": "Variables and Literals",
+      "question": "Which of the following correctly assigns the value 100 to three variables at once?",
+      "options": [
+        "a, b, c == 100",
+        "a = b = c = 100",
+        "a, b, c = 100",
+        "int a = b = c = 100"
+      ],
+      "correct_index": 1,
+      "explanation": "'a = b = c = 100' is called chained assignment and sets all three variables to 100 in one statement. '==' is a comparison (not assignment), 'a, b, c = 100' needs three values on the right, and Python doesn't use 'int' for type declaration.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q006",
+      "topic": "Keywords and Identifiers",
+      "question": "Python identifiers are case-sensitive. What does this mean?",
+      "options": [
+        "All variable names must be written in capital letters",
+        "Variable names can contain upper and lower case letters only",
+        "The variables 'Total' and 'total' are treated as two different variables",
+        "Python converts all identifiers to lowercase automatically"
+      ],
+      "correct_index": 2,
+      "explanation": "Case-sensitive means that uppercase and lowercase letters are treated differently. So 'Total', 'total', and 'TOTAL' are three completely separate variables in Python. This is a common source of bugs for beginners.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q007",
+      "topic": "Keywords and Identifiers",
+      "question": "How many keywords does Python 3 have?",
+      "options": [
+        "25",
+        "30",
+        "35",
+        "40"
+      ],
+      "correct_index": 2,
+      "explanation": "Python 3 has 35 keywords. These are reserved words like if, else, for, while, def, class, return, True, False, None, and, or, not, import, and so on. You cannot use any of these as a variable name.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch03_q008",
+      "topic": "Character Set and Tokens",
+      "question": "What is a 'token' in Python?",
+      "options": [
+        "A type of error in Python",
+        "The smallest individual unit that Python recognises in a program",
+        "A special type of variable",
+        "A way to store multiple values"
+      ],
+      "correct_index": 1,
+      "explanation": "A token is the smallest meaningful unit in a Python program. Just like a sentence is built from words, a program is built from tokens. The five types are: keywords, identifiers, literals, operators, and punctuators.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q009",
+      "topic": "The input() Function",
+      "question": "Rahul wants to add two numbers entered by the user. He writes: a = input(); b = input(); print(a + b). If he enters 5 and 3, what will be printed?",
+      "options": [
+        "8",
+        "53",
+        "5 + 3",
+        "Error"
+      ],
+      "correct_index": 1,
+      "explanation": "input() returns strings, so a = '5' and b = '3'. Adding two strings in Python joins them together (concatenation), so '5' + '3' = '53'. To get 8, Rahul should use: a = int(input()); b = int(input()).",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch03_q010",
+      "topic": "Variables and Literals",
+      "question": "Which of the following is an example of a boolean literal in Python?",
+      "options": [
+        "\"True\"",
+        "true",
+        "True",
+        "1 == 1"
+      ],
+      "correct_index": 2,
+      "explanation": "In Python, boolean literals are written as 'True' and 'False' — with a capital first letter. '\"True\"' is a string literal, 'true' (all lowercase) is not a valid Python keyword, and '1 == 1' is an expression that evaluates to True, not a literal.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q011",
+      "topic": "Keywords and Identifiers",
+      "question": "Which of the following variable names will cause a syntax error in Python?",
+      "options": [
+        "_name",
+        "student_age",
+        "class",
+        "totalMarks"
+      ],
+      "correct_index": 2,
+      "explanation": "'class' is a Python keyword used to define a class, so it cannot be used as a variable name — Python will raise a SyntaxError. '_name', 'student_age', and 'totalMarks' are all valid identifiers.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch03_q012",
+      "topic": "Variables and Literals",
+      "question": "Which line of code correctly assigns different values to three variables in a single statement?",
+      "options": [
+        "x = 1, y = 2, z = 3",
+        "x; y; z = 1; 2; 3",
+        "x, y, z = 10, 20, 30",
+        "int x, y, z = 10, 20, 30"
+      ],
+      "correct_index": 2,
+      "explanation": "'x, y, z = 10, 20, 30' is called tuple unpacking or multiple assignment. Python matches x with 10, y with 20, and z with 30. Python does not use type declarations like 'int', and the other options use incorrect syntax.",
+      "difficulty": "Medium"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch03_c01",
+      "title": "Personal Greeting",
+      "description": "Ask the user to enter their name and their city. Then print a personalised greeting message that includes both pieces of information. This challenge practises using input() to collect text and combining strings with print().",
+      "starter_code": "# Personal Introduction\n# Ask the user for their name and city, then print a greeting\n\nname = input(\"Enter your name: \")\ncity = input(\"Enter your city: \")\n\n# Print a greeting using the name and city\n# Example output: Hello, Priya! Welcome from Mumbai.\n# YOUR CODE HERE",
+      "expected_output": "Enter your name: Priya\nEnter your city: Mumbai\nHello Priya! Welcome from Mumbai.\nGreat to meet you!",
+      "hint": "You can join strings together using the + operator. Make sure you include spaces in the right places inside your strings. For example, \"Hello \" + name gives 'Hello Priya' (notice the space before the closing quote).",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter your name: Priya\nEnter your city: Mumbai\nHello Priya! Welcome from Mumbai.\nGreat to meet you!",
+          "stdin_values": [
+            "Priya",
+            "Mumbai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch03_c02",
+      "title": "Sum of Two Numbers",
+      "description": "Ask the user to enter two whole numbers, then print their sum. This challenge demonstrates a very important rule: input() always gives you a string, so you must convert it using int() before adding. The program also shows what happens without the conversion.",
+      "starter_code": "# Number Operations Without Arithmetic Operators\n# Use only Python built-in functions and string methods — no +, -, *, /\n\na = int(input(\"Enter first number: \"))\nb = int(input(\"Enter second number: \"))\n\n# Find sum using sum() built-in\n# YOUR CODE HERE\n\n# Find the larger number using max()\n# YOUR CODE HERE\n\n# Find absolute difference using abs()\n# YOUR CODE HERE\n\n# Print each result clearly\n# YOUR CODE HERE",
+      "expected_output": "Enter first number: 5\nEnter second number: 3\nWithout int() conversion: 53\nEnter first number again: 5\nEnter second number again: 3\nWith int() conversion, the sum is: 8",
+      "hint": "Notice that without int(), '5' + '3' gives '53' (string joining). With int(input()), 5 + 3 gives 8 (actual addition). Always convert input to the right type before doing maths!",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter first number: 5\nEnter second number: 3\nWithout int() conversion: 53\nEnter first number again: 5\nEnter second number again: 3\nWith int() conversion, the sum is: 8",
+          "stdin_values": [
+            "5",
+            "3",
+            "5",
+            "3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch03_c03",
+      "title": "Simple Interest Calculator",
+      "description": "Build a Simple Interest calculator using the formula SI = (P * R * T) / 100, where P is the principal amount (in rupees), R is the rate of interest per year, and T is the time in years. Ask the user for all three values and display the calculated interest with a friendly message.",
+      "starter_code": "# Simple Interest Calculator\n# Formula: SI = (P * R * T) / 100\n\nprincipal = float(input(\"Enter the Principal amount (Rs): \"))\nrate      = float(input(\"Enter the Rate of interest (%): \"))\ntime      = float(input(\"Enter the Time period (years): \"))\n\n# Calculate Simple Interest\n# YOUR CODE HERE\n\n# Calculate the total amount (Principal + SI)\n# YOUR CODE HERE\n\n# Print the results in the format shown in expected output\n# YOUR CODE HERE",
+      "expected_output": "=== Simple Interest Calculator ===\nEnter the Principal amount (in Rs.): 5000\nEnter the Rate of interest (per year, in %): 8\nEnter the Time period (in years): 3\n\nPrincipal Amount: Rs. 5000.0\nRate of Interest: 8.0 %\nTime Period: 3.0 years\nSimple Interest: Rs. 1200.0\nTotal Amount to be repaid: Rs. 6200.0",
+      "hint": "Use float() instead of int() for the input so the calculator works with decimal values too (like Rs. 5500.50 or 2.5 years). The formula is SI = (P * R * T) / 100. Don't forget to also print the total amount (Principal + SI)!",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "=== Simple Interest Calculator ===\nEnter the Principal amount (in Rs.): 5000\nEnter the Rate of interest (per year, in %): 8\nEnter the Time period (in years): 3\n\nPrincipal Amount: Rs. 5000.0\nRate of Interest: 8.0 %\nTime Period: 3.0 years\nSimple Interest: Rs. 1200.0\nTotal Amount to be repaid: Rs. 6200.0",
+          "stdin_values": [
+            "5000",
+            "8",
+            "3"
+          ]
+        }
+      ]
+    }
+  ]
+}

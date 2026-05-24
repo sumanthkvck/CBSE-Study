@@ -1,0 +1,333 @@
+{
+  "chapter": 7,
+  "title": "Python Dictionary",
+  "unit": "II",
+  "slug": "dictionary",
+  "topics": [
+    {
+      "id": "introduction-to-dictionaries",
+      "title": "Introduction to Dictionaries",
+      "content": "A dictionary stores data as key-value pairs, similar to a real dictionary where you look up a word (the key) and find its meaning (the value). Keys must be unique and immutable — strings, numbers, and tuples can be keys, but lists and other dictionaries cannot. Values can be any data type and are allowed to repeat. You create a dictionary like this: student = {\"name\": \"Priya\", \"age\": 16, \"marks\": 92}. An empty dictionary is created as empty = {} or empty = dict(). In Python 3.7 and later, dictionaries maintain the order in which keys were inserted."
+    },
+    {
+      "id": "accessing-and-modifying",
+      "title": "Accessing and Modifying Dictionaries",
+      "content": "You access a value by using its key in square brackets: student[\"name\"] gives \"Priya\". If the key does not exist, this raises a KeyError. The safer approach is to use the get() method: student.get(\"grade\", \"N/A\") returns \"N/A\" instead of crashing when the key is absent. To add a new key-value pair, simply write student[\"grade\"] = \"A1\". To update an existing value, use the same syntax: student[\"marks\"] = 95 — if the key already exists, the value is overwritten. You can check whether a key exists using: \"name\" in student which returns True or False."
+    },
+    {
+      "id": "traversal-methods",
+      "title": "Traversal Methods",
+      "content": "You can loop through a dictionary in three useful ways. for key in student: iterates over all keys only. student.keys() returns a view of all keys, student.values() returns all values, and student.items() returns all key-value pairs as tuples. The most commonly used traversal pattern is: for key, value in student.items(): print(key, \":\", value) — this gives you both the key and value in each loop iteration. These methods are essential for processing all entries in a dictionary without knowing the keys in advance."
+    },
+    {
+      "id": "built-in-dictionary-methods",
+      "title": "Built-in Dictionary Methods",
+      "content": "Python provides many useful methods for dictionaries. len(d) returns the number of key-value pairs. get(key, default) retrieves a value safely, returning default if the key is missing. update(d2) adds all pairs from d2 into d, overwriting any matching keys. copy() creates a shallow copy of the dictionary. fromkeys(keys, value) creates a new dictionary from a list of keys, all set to the same value. setdefault(key, default) returns the value if the key exists, else inserts it with the default. pop(key) removes and returns the value for that key. popitem() removes and returns the last inserted key-value pair. clear() removes all pairs, leaving an empty dictionary."
+    },
+    {
+      "id": "dictionary-vs-list",
+      "title": "Dictionary vs List — Comparison",
+      "content": "Use a list when the order of items matters and you access elements by their numeric position. Use a dictionary when your data has meaningful labels and you want to look up values by name rather than by position. For example, a student roll number database works much better as a dictionary — you can find any student's record instantly using their roll number as the key, rather than searching through an entire list one by one. Dictionaries are ideal for phone books, student records, word frequency counters, and any scenario where you associate one piece of data with another."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Dictionary",
+      "definition": "A Python collection that stores data as key-value pairs inside curly braces. Keys must be unique and immutable. Values can be any type. Example: student = {'name': 'Rahul', 'marks': 88}. From Python 3.7, insertion order is preserved."
+    },
+    {
+      "term": "Key",
+      "definition": "The unique identifier used to look up a value in a dictionary. Keys must be immutable — strings, integers, and tuples are valid keys. Lists and dictionaries cannot be used as keys because they are mutable."
+    },
+    {
+      "term": "Value",
+      "definition": "The data associated with a key in a dictionary. Values can be of any data type — strings, numbers, lists, even other dictionaries. Unlike keys, values do not need to be unique."
+    },
+    {
+      "term": "Key-Value Pair",
+      "definition": "The fundamental unit of a dictionary, written as key: value. You look up the key to retrieve its associated value. Example: 'city': 'Mumbai' — 'city' is the key and 'Mumbai' is the value."
+    },
+    {
+      "term": "Immutable Key",
+      "definition": "Dictionary keys must be immutable (unchangeable) objects. Strings like 'name', integers like 101, and tuples like (1, 2) are valid keys. Lists and dicts are mutable, so they cannot be dictionary keys."
+    },
+    {
+      "term": "get()",
+      "definition": "A safe dictionary method to retrieve a value: d.get(key, default). If the key exists, its value is returned. If not, the default value is returned instead of raising a KeyError. Example: d.get('grade', 'N/A') returns 'N/A' if 'grade' is not in d."
+    },
+    {
+      "term": "update()",
+      "definition": "A dictionary method that merges another dictionary into the current one. New keys are added; existing keys are overwritten with new values. Example: d.update({'b': 2, 'a': 99}) — 'b' is added and 'a' is updated to 99."
+    },
+    {
+      "term": "pop()",
+      "definition": "A dictionary method that removes a key-value pair AND returns the value. Example: val = d.pop('marks') removes 'marks' from d and stores its value in val. Use pop(key, default) to avoid a KeyError if the key is missing."
+    },
+    {
+      "term": "items()",
+      "definition": "A dictionary method that returns all key-value pairs as a view of tuples. Used most often in for loops: for key, value in d.items(): — this gives you both the key and value in each iteration."
+    },
+    {
+      "term": "Traversal",
+      "definition": "Going through all the entries of a dictionary. Three ways: for key in d: (keys only), for val in d.values(): (values only), for key, val in d.items(): (both key and value — most useful)."
+    },
+    {
+      "term": "Mutable Values",
+      "definition": "Dictionary values can be mutable objects such as lists or even other dictionaries. Example: student['marks'] = [88, 92, 75] stores a list as a value. This allows complex, nested data structures."
+    },
+    {
+      "term": "Hashing",
+      "definition": "Python uses hashing internally to store dictionary keys. A hash is a fixed-size numerical code computed from the key. This is why key lookup in a dictionary is very fast — Python jumps directly to the key's location rather than searching one by one."
+    }
+  ],
+  "summary": "A dictionary is a powerful Python data structure that stores data as key-value pairs enclosed in curly braces. Think of it like a real dictionary: you look up a word (key) and get its meaning (value). Keys must be unique and immutable, while values can be of any type and may repeat. Python provides a rich set of methods — get() for safe access, update() for merging dictionaries, pop() to remove and retrieve values, and items() for iterating over all pairs. Dictionaries are ideal when data has meaningful labels, such as student records, phone books, or word frequency counts, because they allow direct lookup by key rather than searching by position.",
+  "mcqs": [
+    {
+      "id": "ch07_q001",
+      "topic": "Introduction to Dictionaries",
+      "question": "Which of the following can be used as a dictionary key in Python?",
+      "options": [
+        "A list like [1, 2, 3]",
+        "A dictionary like {'a': 1}",
+        "A tuple like (1, 2)",
+        "Both A and B"
+      ],
+      "correct_index": 2,
+      "explanation": "Dictionary keys must be immutable. A tuple is immutable, so (1, 2) is a valid key. Lists and dictionaries are mutable — they cannot be keys because Python uses hashing on keys, which requires them to be unchangeable.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch07_q002",
+      "topic": "Accessing and Modifying",
+      "question": "For d = {'city': 'Jaipur', 'state': 'Rajasthan'}, what is d.get('country', 'India')?",
+      "options": [
+        "KeyError",
+        "None",
+        "'Jaipur'",
+        "'India'"
+      ],
+      "correct_index": 3,
+      "explanation": "The key 'country' does not exist in d. .get('country', 'India') safely returns the default value 'India' instead of raising a KeyError. Without a default, it would return None.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q003",
+      "topic": "Traversal Methods",
+      "question": "What does d.items() return for d = {'a': 1, 'b': 2}?",
+      "options": [
+        "['a', 'b']",
+        "[1, 2]",
+        "dict_items([('a', 1), ('b', 2)])",
+        "{'a': 1, 'b': 2}"
+      ],
+      "correct_index": 2,
+      "explanation": "items() returns a view object containing all key-value pairs as tuples. For {'a': 1, 'b': 2} it returns dict_items([('a', 1), ('b', 2)]). This is most useful for for key, value in d.items(): loops.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch07_q004",
+      "topic": "Built-in Dictionary Methods",
+      "question": "Which method adds all key-value pairs from one dictionary into another?",
+      "options": [
+        "add()",
+        "append()",
+        "merge()",
+        "update()"
+      ],
+      "correct_index": 3,
+      "explanation": "update(d2) adds all key-value pairs from d2 into the current dictionary. If a key already exists, its value is overwritten. There is no add(), append(), or merge() method for dictionaries.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q005",
+      "topic": "Built-in Dictionary Methods",
+      "question": "What does popitem() remove from a dictionary?",
+      "options": [
+        "The first key-value pair inserted",
+        "The key-value pair with the smallest key",
+        "The last inserted key-value pair",
+        "All key-value pairs"
+      ],
+      "correct_index": 2,
+      "explanation": "popitem() removes and returns the LAST inserted key-value pair as a tuple. In Python 3.7+, dictionaries maintain insertion order, so popitem() consistently removes the most recently added pair.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch07_q006",
+      "topic": "Accessing and Modifying",
+      "question": "After: info = {'name': 'Rahul'}; info['city'] = 'Mumbai'; what is info?",
+      "options": [
+        "{'name': 'Rahul'}",
+        "Error: cannot add new key",
+        "{'city': 'Mumbai'}",
+        "{'name': 'Rahul', 'city': 'Mumbai'}"
+      ],
+      "correct_index": 3,
+      "explanation": "Assigning to a new key adds it to the dictionary. info['city'] = 'Mumbai' adds the key 'city' with value 'Mumbai'. The existing 'name' key is unchanged. Result: {'name': 'Rahul', 'city': 'Mumbai'}.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q007",
+      "topic": "Introduction to Dictionaries",
+      "question": "Can dictionary values be duplicated?",
+      "options": [
+        "No, values must be unique just like keys",
+        "Yes, values can repeat but keys must be unique",
+        "No, both keys and values must be unique",
+        "Yes, both keys and values can repeat"
+      ],
+      "correct_index": 1,
+      "explanation": "In a Python dictionary, KEYS must be unique — you cannot have two identical keys. However, VALUES can repeat freely. For example, {'Priya': 'A', 'Rahul': 'A', 'Anita': 'B'} is valid.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q008",
+      "topic": "Built-in Dictionary Methods",
+      "question": "What does d.clear() do to a dictionary d?",
+      "options": [
+        "Deletes the dictionary variable entirely",
+        "Removes all key-value pairs, leaving an empty dictionary",
+        "Removes only the first key-value pair",
+        "Sorts the dictionary"
+      ],
+      "correct_index": 1,
+      "explanation": "clear() removes all key-value pairs from the dictionary, leaving it empty: {}. The variable d still exists but is now an empty dictionary. This is different from del d, which removes the variable itself.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q009",
+      "topic": "Built-in Dictionary Methods",
+      "question": "What does dict.fromkeys(['a', 'b', 'c'], 0) create?",
+      "options": [
+        "{'a': 0, 'b': 0, 'c': 0}",
+        "[0, 0, 0]",
+        "{'a': 'b': 'c': 0}",
+        "Error"
+      ],
+      "correct_index": 0,
+      "explanation": "fromkeys(keys, value) creates a new dictionary using the provided list as keys, all set to the same value. dict.fromkeys(['a', 'b', 'c'], 0) produces {'a': 0, 'b': 0, 'c': 0}. Useful for initialising counters.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch07_q010",
+      "topic": "Accessing and Modifying",
+      "question": "For d = {'score': 88}, what is d.get('rank', 'Not ranked')?",
+      "options": [
+        "88",
+        "KeyError",
+        "None",
+        "'Not ranked'"
+      ],
+      "correct_index": 3,
+      "explanation": "The key 'rank' does not exist in d. d.get('rank', 'Not ranked') returns the default value 'Not ranked' because the key is absent. Using d['rank'] directly would raise a KeyError.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q011",
+      "topic": "Traversal Methods",
+      "question": "Which statement iterates over both keys AND values of a dictionary at the same time?",
+      "options": [
+        "for key in d:",
+        "for val in d.values():",
+        "for key, val in d.items():",
+        "for key in d.keys():"
+      ],
+      "correct_index": 2,
+      "explanation": "d.items() returns key-value pairs as tuples. Using for key, val in d.items(): unpacks each tuple into the key and value simultaneously. The other options give either keys only or values only.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch07_q012",
+      "topic": "Built-in Dictionary Methods",
+      "question": "After: d = {'a': 10, 'b': 20}; d.update({'b': 99, 'c': 30}); what is d?",
+      "options": [
+        "{'a': 10, 'b': 20}",
+        "{'a': 10, 'b': 20, 'c': 30}",
+        "{'a': 10, 'b': 99, 'c': 30}",
+        "{'b': 99, 'c': 30}"
+      ],
+      "correct_index": 2,
+      "explanation": "update() merges the given dictionary into d. New key 'c' is added with value 30. Existing key 'b' is updated from 20 to 99. Key 'a' is unchanged. Result: {'a': 10, 'b': 99, 'c': 30}.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch07_q013",
+      "topic": "Dictionary vs List",
+      "question": "You are storing a student's name, age, and city in Python. Which data structure is most appropriate?",
+      "options": [
+        "A list — because it maintains order by position",
+        "A dictionary — because the data has meaningful labels (name, age, city)",
+        "A string — because it is the simplest",
+        "A tuple — because it is immutable"
+      ],
+      "correct_index": 1,
+      "explanation": "When data has named labels, a dictionary is best. student['name'], student['age'], student['city'] is far clearer than student[0], student[1], student[2]. Dictionaries make code readable and self-documenting.",
+      "difficulty": "Easy"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch07_c01",
+      "title": "State Capital Lookup",
+      "description": "Create a dictionary of 5 Indian states and their capitals. Ask the user to enter a state name and print the capital. If the state is not found in the dictionary, print a friendly message. Use .get() to handle missing states gracefully.\n\nSample run:\nEnter state name: Maharashtra\nCapital of Maharashtra is Mumbai\n\nSample run:\nEnter state name: Atlantis\nSorry, Atlantis is not in our database.",
+      "starter_code": "# State Capital Lookup using a dictionary\n\n# Create a dictionary of at least 5 Indian states and their capitals\n# YOUR CODE HERE\n\nstate = input(\"Enter state name: \")\n\n# Look up the capital; if not found print \"State not found\"\n# YOUR CODE HERE",
+      "expected_output": "Enter state name: Maharashtra\nCapital of Maharashtra is Mumbai",
+      "hint": "Use states.get(state) which returns None if the state is not found. Then use an if-else to print the appropriate message.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter state name: Maharashtra\nCapital of Maharashtra is Mumbai",
+          "stdin_values": [
+            "Maharashtra"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch07_c02",
+      "title": "Word Frequency Counter",
+      "description": "Take a sentence as input, split it into words, and count how many times each word appears. Print the words and their frequencies sorted alphabetically.\n\nSample input: the cat sat on the mat the cat\nExpected output:\ncat: 2\nmat: 1\non: 1\nsat: 1\nthe: 3",
+      "starter_code": "# Word Frequency Counter\n\nsentence = input(\"Enter a sentence: \")\n\n# Split into words and count frequency of each word\n# Store counts in a dictionary\n# YOUR CODE HERE\n\n# Print each word and its count, one per line, sorted alphabetically\n# YOUR CODE HERE",
+      "expected_output": "cat: 2\nmat: 1\non: 1\nsat: 1\nthe: 3",
+      "hint": "Use a dictionary where each word is a key and its count is the value. Check if the word is already in the dictionary: if it is, add 1 to its count; if not, set its count to 1. Use sorted(freq) to print keys alphabetically.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "cat: 2\nmat: 1\non: 1\nsat: 1\nthe: 3",
+          "stdin_values": [
+            "the cat sat on the mat on the cat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch07_c03",
+      "title": "Student Marks Report",
+      "description": "Create a dictionary with at least 5 student names as keys and their marks (out of 100) as values. For each student, print their name, marks, and grade (A if >= 80, B if >= 60, C if >= 40, F otherwise). Also print the class average, the topper's name, and the lowest scorer's name.\n\nExpected output:\nPriya: 92 - Grade A\nRahul: 74 - Grade B\nAnita: 55 - Grade C\nKiran: 38 - Grade F\nDeepak: 85 - Grade A\n\nClass Average: 68.8\nTopper: Priya (92)\nLowest: Kiran (38)",
+      "starter_code": "# Student Grade Book\n\nstudents = {\n    \"Priya\": 92,\n    \"Rahul\": 74,\n    \"Anita\": 55,\n    \"Vikram\": 88,\n    \"Meena\": 43,\n}\n\n# For each student, determine grade:\n# >= 90 → Grade A\n# >= 75 → Grade B\n# >= 60 → Grade C\n# >= 40 → Grade D\n# else  → Grade F\n# Print: \"Name: Score - Grade X\"\n# YOUR CODE HERE",
+      "expected_output": "Priya: 92 - Grade A\nRahul: 74 - Grade B\nAnita: 55 - Grade C\nKiran: 38 - Grade F\nDeepak: 85 - Grade A\n\nClass Average: 68.8\nTopper: Priya (92)\nLowest: Kiran (38)",
+      "hint": "Use marks.values() with sum() and len() for the average. Use max(marks, key=marks.get) to find the name with the highest marks — it compares keys by their values.",
+      "test_cases": []
+    }
+  ],
+  "study_guide": {
+    "intro_by_keyword": {
+      "dictionary": "A Python dictionary stores key-value pairs — like a real dictionary where you look up a word to get its meaning.",
+      "python": "Python is a beginner-friendly, general-purpose programming language known for its simple, readable syntax."
+    },
+    "mnemonics_by_keyword": {
+      "dictionary": "**K:V pairs** — always think Key colon Value. Like a phone book: name (key) → number (value).",
+      "python": "**IPO** — Input, Process, Output. Every Python program (and every computer program) does these three things."
+    },
+    "did_you_know_by_keyword": {
+      "dictionary": [
+        "Python dicts (since Python 3.7) maintain insertion order — the order you add keys is preserved.",
+        "Python dict lookup is O(1) — finding a value by key is equally fast whether the dict has 10 entries or 10 million."
+      ],
+      "python": [
+        "Python was named after the British comedy group 'Monty Python', not the snake! Creator Guido van Rossum was a fan.",
+        "Python is the most popular language for AI/ML and is used by Google, NASA, Netflix, and Instagram."
+      ]
+    }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "chapter": 4,
+  "title": "Data Types and Operators",
+  "slug": "data-types-operators",
+  "unit": "II",
+  "topics": [
+    {
+      "id": "data-types-python",
+      "title": "Data Types in Python",
+      "content": "Python has several built-in data types to store different kinds of values. Whole numbers like 42 or -5 are stored as int. Decimal numbers like 3.14 are stored as float. Text in quotes like \"hello\" is stored as str. True or False values are stored as bool (note the capital first letter). Collections include list ([1,2,3] — ordered, changeable), tuple ((1,2,3) — ordered, fixed), set ({1,2,3} — unordered, no duplicates), and dict ({\"key\":\"value\"} — key-value pairs). The special value None represents the absence of any value. Use the built-in type() function to check what type a value is — for example, type(42) returns <class 'int'>."
+    },
+    {
+      "id": "mutable-vs-immutable",
+      "title": "Mutable vs Immutable Types",
+      "content": "Mutable types can be changed after they are created — list, dict, and set are mutable. For example, you can change a list element with my_list[0] = 99. Immutable types cannot be changed once created — int, float, str, tuple, and bool are all immutable. If you try to change a character inside a string directly, Python will raise a TypeError. Python takes advantage of immutability to save memory: when two variables hold the same immutable value, they can safely share the same memory location. Understanding mutability helps you avoid bugs where you accidentally change data you did not intend to change."
+    },
+    {
+      "id": "typecasting",
+      "title": "Typecasting",
+      "content": "Typecasting means converting a value from one data type to another. Implicit typecasting happens automatically — for example, when you add an int and a float (3 + 2.5), Python upgrades the result to float (5.5) without you asking. Explicit typecasting is done by the programmer using conversion functions: int() converts to integer, float() converts to float, str() converts to string, and bool() converts to boolean. Examples: int(\"42\") gives 42, str(100) gives \"100\", float(5) gives 5.0. Note that int() always truncates the decimal part — int(3.9) gives 3, not 4. This is very useful when reading numbers from the keyboard using input(), which always returns a string."
+    },
+    {
+      "id": "operators",
+      "title": "Operators",
+      "content": "Operators are special symbols that perform operations on values (called operands). Arithmetic operators perform maths: + (add), - (subtract), * (multiply), / (divide, always gives float), // (floor division, gives integer result), % (modulo, gives remainder), ** (exponentiation/power). Comparison operators compare two values and return True or False: ==, !=, <, >, <=, >=. Logical operators combine conditions: and (both must be True), or (at least one must be True), not (reverses True/False). Assignment operators store values: = (assign), += (add and assign), -= (subtract and assign), and others like *=, /=, //=, **=, %=. Membership operators check if a value exists in a sequence: in and not in. Identity operators check if two variables point to the exact same object in memory: is and is not. Bitwise operators (&, |, ^, ~, <<, >>) work on individual bits and are used in advanced programming."
+    },
+    {
+      "id": "operator-precedence",
+      "title": "Operator Precedence and Associativity",
+      "content": "When an expression has multiple operators, Python follows a fixed order of precedence — similar to BODMAS in maths. From highest to lowest priority: ** (power), then unary +/- (sign), then *, /, //, %, then +/-, then comparison operators (==, !=, <, >, etc.), then not, then and, then or (lowest). For example, 2 + 3 * 4 equals 14 because * is done before +. Associativity tells us which direction to evaluate when two operators have the same precedence. Most operators associate left-to-right (so 10 - 3 - 2 = 5). The ** operator is an exception — it associates right-to-left, so 2**3**2 is calculated as 2**(3**2) = 2**9 = 512. When in doubt, use parentheses to make your intention clear."
+    },
+    {
+      "id": "expressions-and-errors",
+      "title": "Expressions and Errors",
+      "content": "An expression is any combination of values, variables, and operators that Python can evaluate to produce a result — for example, 5 * (3 + 2) is an expression that evaluates to 25. Python programs can have three types of errors. A syntax error means you have broken Python's grammar rules (missing colon, wrong indentation, misspelled keyword) — Python catches these before running the program. A runtime error occurs while the program is running and causes it to crash — common examples are ZeroDivisionError (dividing by zero), NameError (using a variable before it is defined), and TypeError (wrong type for an operation). A logical error is the trickiest — the program runs without crashing but gives a wrong answer, such as calculating an average as total * count instead of total / count. Python shows the line number and error type for runtime errors to help you find and fix them."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Data Type",
+      "definition": "A category that tells Python what kind of value a variable holds and what operations can be done on it. Common types: int, float, str, bool, list, tuple, set, dict, None."
+    },
+    {
+      "term": "Mutable",
+      "definition": "A data type whose value can be changed after it is created. Lists, dictionaries, and sets are mutable — you can add, remove, or change their elements."
+    },
+    {
+      "term": "Immutable",
+      "definition": "A data type whose value cannot be changed after it is created. Integers, floats, strings, tuples, and booleans are immutable. Any 'change' actually creates a new object."
+    },
+    {
+      "term": "Typecasting",
+      "definition": "Converting a value from one data type to another. Implicit typecasting is done automatically by Python; explicit typecasting is done by the programmer using int(), float(), str(), or bool()."
+    },
+    {
+      "term": "Operator",
+      "definition": "A symbol that performs an operation on one or more values. Types include arithmetic (+, -, *, /, //, %, **), comparison (==, !=, <, >), logical (and, or, not), assignment (=, +=), membership (in), and identity (is)."
+    },
+    {
+      "term": "Operand",
+      "definition": "A value on which an operator acts. In the expression 10 + 3, both 10 and 3 are operands and + is the operator."
+    },
+    {
+      "term": "Expression",
+      "definition": "A combination of values, variables, and operators that Python evaluates to produce a single result. Examples: 2 + 3 * 4, len(\"hello\"), x > 0 and x < 100."
+    },
+    {
+      "term": "Precedence",
+      "definition": "The priority order in which Python evaluates operators in an expression. Higher precedence operators are evaluated first. Use parentheses to override the default order."
+    },
+    {
+      "term": "Associativity",
+      "definition": "The direction (left-to-right or right-to-left) in which operators of the same precedence are evaluated. Most operators are left-to-right; the ** operator is right-to-left."
+    },
+    {
+      "term": "Floor Division",
+      "definition": "The // operator divides two numbers and rounds DOWN to the nearest integer, discarding the decimal part. Example: 17 // 5 gives 3 (not 3.4)."
+    },
+    {
+      "term": "Modulo",
+      "definition": "The % operator returns the remainder after integer division. Example: 17 % 5 gives 2 because 17 = 5 × 3 + 2. Very useful for checking if a number is even or odd (n % 2 == 0 means even)."
+    },
+    {
+      "term": "Syntax Error",
+      "definition": "An error caused by breaking Python's grammar rules — for example, missing a colon after if, or wrong indentation. Python detects these before running the program."
+    },
+    {
+      "term": "Logical Error",
+      "definition": "An error where the program runs without crashing but produces an incorrect result. These are the hardest to find because Python cannot detect them — the programmer must trace through the logic."
+    },
+    {
+      "term": "Runtime Error",
+      "definition": "An error that occurs while the program is running and causes it to stop suddenly. Examples: ZeroDivisionError, NameError, TypeError. Python displays the error type and line number."
+    }
+  ],
+  "summary": "Python provides a rich set of built-in data types: numeric types (int, float, complex), text (str), boolean (bool), and collections (list, tuple, set, dict). Types are either mutable (can change — list, dict, set) or immutable (cannot change — int, float, str, tuple). Typecasting lets you convert between types, either implicitly (Python does it automatically) or explicitly using int(), float(), str(), or bool(). Operators let you perform arithmetic, comparisons, logical operations, assignments, and more. Python follows a strict precedence order when evaluating expressions — remember ** is right-to-left while most others are left-to-right. Errors fall into three categories: syntax errors (grammar mistakes caught before running), runtime errors (crashes during execution), and logical errors (wrong output, hardest to detect).",
+  "mcqs": [
+    {
+      "id": "ch04_q001",
+      "topic": "Operators",
+      "question": "What is the value of the expression: 10 + 3 * 2?",
+      "options": [
+        "26",
+        "16",
+        "12",
+        "32"
+      ],
+      "correct_index": 1,
+      "explanation": "Due to operator precedence, * is evaluated before +. So 3 * 2 = 6 first, then 10 + 6 = 16.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q002",
+      "topic": "Operators",
+      "question": "What is the result of 17 // 5 in Python?",
+      "options": [
+        "3.4",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_index": 2,
+      "explanation": "The // operator performs floor division, which divides and discards the decimal part. 17 ÷ 5 = 3.4, and floor of 3.4 is 3.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q003",
+      "topic": "Operators",
+      "question": "What does 17 % 5 give in Python?",
+      "options": [
+        "3",
+        "2",
+        "3.4",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "The % (modulo) operator gives the remainder after division. 17 = 5 × 3 + 2, so the remainder is 2.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q004",
+      "topic": "Data Types in Python",
+      "question": "What does type(\"hello\") return?",
+      "options": [
+        "<class 'string'>",
+        "<class 'text'>",
+        "<class 'str'>",
+        "<class 'char'>"
+      ],
+      "correct_index": 2,
+      "explanation": "Text values in Python are of type str (short for string). type(\"hello\") returns <class 'str'>.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q005",
+      "topic": "Typecasting",
+      "question": "What is the result of int(3.9) in Python?",
+      "options": [
+        "4",
+        "3",
+        "3.9",
+        "Error"
+      ],
+      "correct_index": 1,
+      "explanation": "int() truncates (cuts off) the decimal part — it does NOT round. So int(3.9) gives 3, not 4.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q006",
+      "topic": "Mutable vs Immutable Types",
+      "question": "Which of the following are MUTABLE data types in Python?",
+      "options": [
+        "str and tuple",
+        "int and float",
+        "list and dict",
+        "tuple and str"
+      ],
+      "correct_index": 2,
+      "explanation": "Mutable types can be changed after creation. list and dict are mutable — you can add, remove, or update their elements. Strings and tuples are immutable.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch04_q007",
+      "topic": "Expressions and Errors",
+      "question": "What kind of error does the expression 10 / 0 cause?",
+      "options": [
+        "SyntaxError",
+        "LogicalError",
+        "ZeroDivisionError",
+        "ValueError"
+      ],
+      "correct_index": 2,
+      "explanation": "Dividing any number by zero is mathematically undefined. Python raises a ZeroDivisionError at runtime when this is attempted.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q008",
+      "topic": "Expressions and Errors",
+      "question": "A student writes: average = total * count (instead of total / count). The program runs but gives a wrong answer. What type of error is this?",
+      "options": [
+        "Syntax Error",
+        "Runtime Error",
+        "Logical Error",
+        "IndentationError"
+      ],
+      "correct_index": 2,
+      "explanation": "A logical error means the program runs without crashing but produces an incorrect result. Python cannot detect this — the programmer must trace through the logic to find it.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch04_q009",
+      "topic": "Typecasting",
+      "question": "What does bool(0) return in Python?",
+      "options": [
+        "True",
+        "0",
+        "False",
+        "None"
+      ],
+      "correct_index": 2,
+      "explanation": "In Python, 0 (zero) is considered False when converted to bool. Any non-zero number is True. So bool(0) returns False.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q010",
+      "topic": "Typecasting",
+      "question": "What is the data type of the result when you add an int and a float in Python?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "complex"
+      ],
+      "correct_index": 1,
+      "explanation": "Python automatically performs implicit typecasting. When int and float are combined, Python upgrades the result to float to avoid losing precision. Example: 3 + 2.5 gives 5.5 (float).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch04_q011",
+      "topic": "Operator Precedence and Associativity",
+      "question": "What is the value of 2 ** 3 ** 2 in Python?",
+      "options": [
+        "64",
+        "512",
+        "729",
+        "72"
+      ],
+      "correct_index": 1,
+      "explanation": "The ** operator is right-to-left associative, so 2**3**2 is evaluated as 2**(3**2) = 2**9 = 512. If it were left-to-right, it would be (2**3)**2 = 8**2 = 64 — but that is NOT how Python works.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch04_q012",
+      "topic": "Operators",
+      "question": "Which operator in Python checks if two variables refer to the SAME object in memory (not just equal values)?",
+      "options": [
+        "==",
+        "!=",
+        "in",
+        "is"
+      ],
+      "correct_index": 3,
+      "explanation": "The 'is' operator is the identity operator — it checks if two variables point to the exact same object in memory. The '==' operator only checks if their values are equal.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch04_q013",
+      "topic": "Operators",
+      "question": "What will a += 5 do if a is currently 10?",
+      "options": [
+        "a becomes 5",
+        "a becomes 50",
+        "a becomes 15",
+        "Error"
+      ],
+      "correct_index": 2,
+      "explanation": "The += operator adds the right value to the left variable and stores the result back. So a += 5 is the same as a = a + 5 = 10 + 5 = 15.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch04_q014",
+      "topic": "Data Types in Python",
+      "question": "Which Python value represents 'nothing' or 'no value'?",
+      "options": [
+        "False",
+        "0",
+        "None",
+        "\"\""
+      ],
+      "correct_index": 2,
+      "explanation": "None is a special constant in Python that represents the absence of a value. It is often used as a default return value for functions that don't explicitly return anything.",
+      "difficulty": "Medium"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch04_c01",
+      "title": "Data Type Explorer",
+      "description": "Create a program that declares variables of different types (int, float, str, bool, list) and prints the value and its type for each one. Then demonstrate typecasting by converting a float to int, an int to string, and a string '75' to an integer. Show each conversion and its result.",
+      "starter_code": "# Data Type Explorer\n# Show the value and type of different expressions\n\n# Task: print the value and type of each expression below\n# Format: print(f\"Value: {x}   Type: {type(x)}\")\n\n# Expression 1: 2 ** 4\n# YOUR CODE HERE\n\n# Expression 2: 9.2\n# YOUR CODE HERE\n\n# Expression 3: \"Hello\" + \" \" + \"World\"\n# YOUR CODE HERE\n\n# Expression 4: 10 == 10\n# YOUR CODE HERE",
+      "expected_output": "Value: 16   Type: <class 'int'>\nValue: 9.2   Type: <class 'float'>\nValue: Priya   Type: <class 'str'>\nValue: True   Type: <class 'bool'>\nValue: [88, 92, 76, 95, 81]   Type: <class 'list'>\n\n--- Typecasting Examples ---\nfloat to int: 3\nint to str: 16\nString '75' converted to int: 75",
+      "hint": "Use print(\"Value:\", variable, \"  Type:\", type(variable)) for each one. For typecasting, use int(), str(), float() functions.",
+      "test_cases": []
+    },
+    {
+      "id": "ch04_c02",
+      "title": "Cricket Score Calculator",
+      "description": "Write a program that reads a batsman's runs scored and balls faced from the user, then calculates the strike rate (runs / balls * 100). Also read total runs and number of overs for a team innings and calculate the run rate (runs / overs). Display both results rounded to 2 decimal places. Remember to use float() when reading input.",
+      "starter_code": "# Batsman Strike Rate Calculator\n# Strike Rate = (Runs / Balls) * 100\n\nprint(\"=== Batsman Strike Rate ===\")\nruns  = int(input(\"Enter runs scored: \"))\nballs = int(input(\"Enter balls faced: \"))\n\n# Calculate strike rate\n# YOUR CODE HERE\n\n# Determine performance category:\n# SR >= 150 → \"Excellent\"\n# SR >= 100 → \"Good\"\n# else      → \"Needs improvement\"\n# YOUR CODE HERE\n\n# Print strike rate (2 decimal places) and category\n# YOUR CODE HERE",
+      "expected_output": "=== Batsman Strike Rate ===\nEnter runs scored: 85\nEnter balls faced: 60\nStrike Rate: 141.67\n\n=== Team Run Rate ===\nEnter total runs scored: 285\nEnter overs bowled: 50\nRun Rate: 5.70 runs per over",
+      "hint": "Strike rate formula: (runs / balls) * 100. Run rate formula: total_runs / overs. Use :.2f in an f-string to round to 2 decimal places.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "=== Batsman Strike Rate ===\nEnter runs scored: 85\nEnter balls faced: 60\nStrike Rate: 141.67\n\n=== Team Run Rate ===\nEnter total runs scored: 285\nEnter overs bowled: 50\nRun Rate: 5.70 runs per over",
+          "stdin_values": [
+            "85",
+            "60",
+            "285",
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch04_c03",
+      "title": "Operator Practice",
+      "description": "Given two numbers a = 17 and b = 5, calculate and print all arithmetic operations: addition, subtraction, multiplication, regular division, floor division, modulo, and power. Display the results in a neat format so it is clear what each operation does.",
+      "starter_code": "# Arithmetic and Bitwise Operators Demo\na = 17\nb = 5\nprint(f\"a = {a}, b = {b}\")\nprint(\"-\" * 25)\n\n# Print results for each operation in the format: \"a + b  = 22\"\n# Arithmetic: +, -, *, /, //, %, **\n# YOUR CODE HERE\n\n# Bitwise: &, |, ^, ~a, <<, >>\n# YOUR CODE HERE",
+      "expected_output": "a = 17, b = 5\n-------------------------\na + b  = 22\na - b  = 12\na * b  = 85\na / b  = 3.4\na // b = 3\na % b  = 2\na ** b = 1419857",
+      "hint": "Use a*b for multiplication, a/b for division, a//b for floor division, a%b for remainder, a**b for power. Put the expression inside the f-string curly braces: {a*b}.",
+      "test_cases": []
+    }
+  ]
+}

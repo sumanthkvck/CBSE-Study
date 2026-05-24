@@ -1,0 +1,14 @@
+{
+  "chapters": [
+    {"num": 1, "title": "Introduction to Computer System", "slug": "computer-system", "file": "ch01_computer_system.json", "icon": "🖥️", "unit": "I", "pages": "1-23"},
+    {"num": 2, "title": "Programming with Python", "slug": "programming-python", "file": "ch02_programming_python.json", "icon": "🐍", "unit": "II", "pages": "24-34"},
+    {"num": 3, "title": "Python Basics", "slug": "python-basics", "file": "ch03_python_basics.json", "icon": "📝", "unit": "II", "pages": "35-61"},
+    {"num": 4, "title": "Data Types and Operators", "slug": "data-types-operators", "file": "ch04_data_types_operators.json", "icon": "🔢", "unit": "II", "pages": "62-96"},
+    {"num": 5, "title": "Control Flow Statements", "slug": "control-flow", "file": "ch05_control_flow.json", "icon": "🔀", "unit": "II", "pages": "97-118"},
+    {"num": 6, "title": "List Manipulation", "slug": "lists", "file": "ch06_lists.json", "icon": "📋", "unit": "II", "pages": "119-143"},
+    {"num": 7, "title": "Python Dictionary", "slug": "dictionary", "file": "ch07_dictionary.json", "icon": "📖", "unit": "II", "pages": "144-166"},
+    {"num": 8, "title": "Database Concepts", "slug": "database-concepts", "file": "ch08_database_concepts.json", "icon": "🗄️", "unit": "III", "pages": "167-181"},
+    {"num": 9, "title": "Structured Query Language", "slug": "sql", "file": "ch09_sql.json", "icon": "💾", "unit": "III", "pages": "182-210"},
+    {"num": 10, "title": "Emerging Trends in Technology", "slug": "emerging-trends", "file": "ch10_emerging_trends.json", "icon": "🌐", "unit": "IV", "pages": "211-241"}
+  ]
+}

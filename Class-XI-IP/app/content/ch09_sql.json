@@ -1,0 +1,393 @@
+{
+  "chapter": 9,
+  "title": "Structured Query Language",
+  "unit": "III",
+  "topics": [
+    {
+      "id": "introduction-to-sql",
+      "title": "Introduction to SQL",
+      "content": "SQL (Structured Query Language) is the standard language used to communicate with and manage relational databases. SQL has several important characteristics: it is non-procedural, meaning you tell the database WHAT you want rather than HOW to get it; it is case-insensitive for keywords (SELECT, select, and Select all work the same); it is universal, working with all major relational databases like MySQL, Oracle, and SQL Server; and it operates on whole tables at once rather than one row at a time. SQL commands are grouped into five categories: DDL (Data Definition Language — CREATE, ALTER, DROP) for defining structure; DML (Data Manipulation Language — INSERT, UPDATE, DELETE) for changing data; DQL (Data Query Language — SELECT) for retrieving data; DCL (Data Control Language — GRANT, REVOKE) for controlling access; and TCL (Transaction Control Language — COMMIT, ROLLBACK) for managing transactions. MySQL is a popular free open-source DBMS that uses SQL and is widely used for web applications."
+    },
+    {
+      "id": "data-types-and-constraints",
+      "title": "Data Types and Constraints in MySQL",
+      "content": "MySQL provides several data types to store different kinds of values: CHAR(n) stores a fixed-length string of exactly n characters (unused space is padded with spaces, which wastes storage); VARCHAR(n) stores a variable-length string up to n characters (only uses as much space as needed — more efficient); INT stores whole numbers (positive or negative); FLOAT stores decimal numbers with approximate precision; DECIMAL(m,d) stores exact decimal numbers with m total digits and d digits after the decimal point (always use DECIMAL for money to avoid rounding errors); DATE stores dates in YYYY-MM-DD format; and BOOLEAN stores true/false values (stored internally as TINYINT 1 or 0). Constraints are rules enforced on column values: NOT NULL ensures a column cannot be left empty; UNIQUE ensures all values in a column are different; PRIMARY KEY combines NOT NULL and UNIQUE — it uniquely identifies each row; DEFAULT value automatically fills in a value if none is provided; and CHECK validates that a value satisfies a condition (e.g., CHECK(Age > 0))."
+    },
+    {
+      "id": "ddl-commands",
+      "title": "DDL Commands — Database and Table Structure",
+      "content": "DDL (Data Definition Language) commands define and modify the structure of databases and tables. CREATE DATABASE school; creates a new empty database. SHOW DATABASES; lists all databases on the server. USE school; selects a database to work in — all subsequent commands apply to this database. CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(30) NOT NULL, Age INT, Marks FLOAT); creates a table with specified columns and constraints. DESCRIBE Student; (or DESC Student;) displays the structure of a table — column names, data types, and constraints. SHOW TABLES; lists all tables in the current database. ALTER TABLE is used to modify an existing table's structure: ALTER TABLE Student ADD COLUMN Email VARCHAR(50); adds a new column; ALTER TABLE Student MODIFY COLUMN Name VARCHAR(50); changes a column's data type or size; ALTER TABLE Student DROP COLUMN Email; removes a column entirely. DROP TABLE Student; permanently deletes the entire table including all its data. DROP DATABASE school; permanently deletes the entire database — use with extreme caution."
+    },
+    {
+      "id": "dml-commands",
+      "title": "DML Commands — INSERT, UPDATE, DELETE",
+      "content": "DML (Data Manipulation Language) commands add, modify, and remove data within tables. INSERT INTO Student VALUES (101, 'Priya', 16, 92.5); inserts a complete row — values must match all columns in order. INSERT INTO Student (RollNo, Name, Marks) VALUES (102, 'Rahul', 88.0); inserts a row with only specified columns — unspecified columns get NULL or their DEFAULT value. UPDATE Student SET Marks = 95.0 WHERE RollNo = 101; modifies existing data in rows that match the WHERE condition. A critical warning: UPDATE without a WHERE clause changes every single row in the table, which is almost never intended. DELETE FROM Student WHERE RollNo = 102; removes the row(s) that match the condition. DELETE FROM Student; (without WHERE) removes all rows but keeps the table structure intact. DROP TABLE Student; removes the entire table including its structure — it is a DDL command, not DML. When writing UPDATE and DELETE commands, always double-check the WHERE clause before executing."
+    },
+    {
+      "id": "select-and-where-clause",
+      "title": "SELECT and WHERE Clause",
+      "content": "SELECT is the most frequently used SQL command — it retrieves data from one or more tables. SELECT * FROM Student; retrieves all columns of every row. SELECT Name, Marks FROM Student; retrieves only specific columns. The WHERE clause filters which rows are returned: SELECT * FROM Student WHERE Marks >= 90; returns only students with marks 90 or above. Comparison operators in WHERE include: = (equal), <> or != (not equal), < (less than), > (greater than), <= (less than or equal), >= (greater than or equal). BETWEEN selects values in a range: WHERE Marks BETWEEN 80 AND 100; (inclusive of both endpoints). IN matches any value from a list: WHERE Class IN (10, 11, 12);. IS NULL checks for missing values: WHERE Email IS NULL;. LIKE enables pattern matching with wildcards: WHERE Name LIKE 'P%' matches names starting with P; WHERE Name LIKE '_r%' matches names with 'r' as the second letter. The % wildcard matches zero or more characters, while the _ wildcard matches exactly one character. Logical operators AND, OR, and NOT combine conditions. ORDER BY sorts results: SELECT * FROM Student ORDER BY Marks DESC; sorts by highest marks first (ASC is ascending order and is the default)."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "SQL (Structured Query Language)",
+      "definition": "The standard language used to manage and query relational databases. It is non-procedural (you specify what you want, not how to get it) and works with all major DBMS software."
+    },
+    {
+      "term": "DDL (Data Definition Language)",
+      "definition": "SQL commands that define or modify the structure of a database — CREATE, ALTER, and DROP. These commands change the schema, not the data itself."
+    },
+    {
+      "term": "DML (Data Manipulation Language)",
+      "definition": "SQL commands that add, change, or remove data within tables — INSERT, UPDATE, and DELETE. These commands work on the data, not the table structure."
+    },
+    {
+      "term": "DQL (Data Query Language)",
+      "definition": "SQL commands used to retrieve data from tables — primarily SELECT. Sometimes treated as part of DML, but often classified separately."
+    },
+    {
+      "term": "CREATE TABLE",
+      "definition": "A DDL command that creates a new table in the database with specified column names, data types, and constraints. Example: CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(30));"
+    },
+    {
+      "term": "DROP TABLE",
+      "definition": "A DDL command that permanently deletes an entire table, including all its data and structure. This action cannot be undone, unlike DELETE which only removes rows."
+    },
+    {
+      "term": "ALTER TABLE",
+      "definition": "A DDL command that modifies the structure of an existing table — used to add a column (ADD COLUMN), change a column's type (MODIFY COLUMN), or remove a column (DROP COLUMN)."
+    },
+    {
+      "term": "INSERT INTO",
+      "definition": "A DML command that adds new rows of data to a table. Values can be specified for all columns in order, or for specific columns by name."
+    },
+    {
+      "term": "SELECT",
+      "definition": "The most-used SQL command — retrieves data from one or more tables. SELECT * retrieves all columns; SELECT col1, col2 retrieves specific columns."
+    },
+    {
+      "term": "UPDATE",
+      "definition": "A DML command that modifies existing data in table rows that match a WHERE condition. Without a WHERE clause, it changes every row in the table — a common and dangerous mistake."
+    },
+    {
+      "term": "DELETE FROM",
+      "definition": "A DML command that removes rows from a table that match a WHERE condition. Without a WHERE clause, it removes all rows (but the table structure remains)."
+    },
+    {
+      "term": "WHERE Clause",
+      "definition": "A clause added to SELECT, UPDATE, or DELETE to filter which rows are affected, based on a condition. Example: WHERE Marks > 80 applies only to rows where Marks exceeds 80."
+    },
+    {
+      "term": "LIKE Operator",
+      "definition": "A WHERE operator for pattern matching in text columns. % matches any number of characters (including zero). _ matches exactly one character. Example: LIKE 'A%' matches all values starting with A."
+    },
+    {
+      "term": "ORDER BY",
+      "definition": "A clause in SELECT that sorts the result rows. ORDER BY column ASC sorts ascending (A to Z, 0 to 9 — the default). ORDER BY column DESC sorts descending (Z to A, largest to smallest)."
+    },
+    {
+      "term": "VARCHAR(n)",
+      "definition": "A variable-length string data type that stores up to n characters but only uses as much space as the actual data requires. More efficient than CHAR(n) for data of varying lengths."
+    },
+    {
+      "term": "CHAR(n)",
+      "definition": "A fixed-length string data type that always stores exactly n characters, padding shorter values with spaces. Best used when all values will always be the same length (e.g., a 2-letter state code)."
+    },
+    {
+      "term": "NOT NULL Constraint",
+      "definition": "A column constraint that prevents a column from being left empty (NULL). Any INSERT or UPDATE that does not provide a value for this column will be rejected by the database."
+    },
+    {
+      "term": "PRIMARY KEY Constraint",
+      "definition": "A column constraint that combines NOT NULL and UNIQUE — it uniquely identifies each row in a table. Each table can have only one primary key."
+    },
+    {
+      "term": "BETWEEN ... AND",
+      "definition": "A WHERE operator that selects rows where a column's value falls within a specified range, inclusive of both boundary values. Example: WHERE Marks BETWEEN 80 AND 100 includes 80 and 100."
+    },
+    {
+      "term": "Query",
+      "definition": "A request made to a database to retrieve or manipulate data. In SQL, the SELECT statement is used to write queries that fetch specific data from tables."
+    }
+  ],
+  "summary": "SQL (Structured Query Language) is the standard language for managing relational databases. SQL commands are categorised as DDL (CREATE, ALTER, DROP — for defining structure), DML (INSERT, UPDATE, DELETE — for managing data), and DQL (SELECT — for querying data). MySQL provides data types like VARCHAR (variable-length text), CHAR (fixed-length text), INT, FLOAT, DECIMAL, and DATE, and enforces data integrity through constraints like NOT NULL, UNIQUE, PRIMARY KEY, and CHECK. DDL commands create and modify databases and tables; DML commands add, update, and delete rows; and SELECT retrieves data with powerful filtering using WHERE (with operators like BETWEEN, IN, LIKE, and IS NULL), and sorting using ORDER BY. Writing UPDATE and DELETE always requires careful use of WHERE clauses to avoid accidentally modifying or deleting all rows.",
+  "mcqs": [
+    {
+      "id": "ch09_q001",
+      "topic": "Introduction to SQL",
+      "question": "What does DDL stand for in SQL?",
+      "options": [
+        "Data Designing Language",
+        "Data Definition Language",
+        "Database Design Logic",
+        "Dynamic Data Language"
+      ],
+      "correct_index": 1,
+      "explanation": "DDL stands for Data Definition Language. It includes commands that define and modify the structure of a database — CREATE, ALTER, and DROP. These commands change the schema, not the stored data.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q002",
+      "topic": "DDL Commands",
+      "question": "Which SQL command creates a new table in a database?",
+      "options": [
+        "INSERT TABLE",
+        "MAKE TABLE",
+        "CREATE TABLE",
+        "ADD TABLE"
+      ],
+      "correct_index": 2,
+      "explanation": "CREATE TABLE is the DDL command used to create a new table. You specify the table name, column names, data types, and constraints. Example: CREATE TABLE Student (RollNo INT PRIMARY KEY, Name VARCHAR(30));",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q003",
+      "topic": "Data Types and Constraints",
+      "question": "What is the key difference between CHAR(10) and VARCHAR(10)?",
+      "options": [
+        "CHAR stores numbers; VARCHAR stores text",
+        "CHAR is always exactly 10 characters (padded if shorter); VARCHAR stores up to 10 characters and uses only the space needed",
+        "CHAR can store up to 10 characters; VARCHAR stores exactly 10",
+        "There is no difference — they are identical"
+      ],
+      "correct_index": 1,
+      "explanation": "CHAR(10) always uses exactly 10 characters of storage, padding shorter values with spaces. VARCHAR(10) can store up to 10 characters but only uses as much space as the actual data, making it more storage-efficient for variable-length data.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q004",
+      "topic": "DDL Commands",
+      "question": "What does the SQL command DESC Student; do?",
+      "options": [
+        "Deletes the Student table",
+        "Displays all rows in the Student table sorted in descending order",
+        "Shows the structure of the Student table — column names, data types, and constraints",
+        "Drops the Student database"
+      ],
+      "correct_index": 2,
+      "explanation": "DESC (or DESCRIBE) followed by a table name shows the table's structure — it displays each column's name, data type, whether it allows NULL, and any constraints like PRIMARY KEY. It does NOT retrieve data rows.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q005",
+      "topic": "SELECT and WHERE Clause",
+      "question": "Which SELECT statement retrieves ALL columns from every row of the Student table?",
+      "options": [
+        "SELECT ALL FROM Student;",
+        "SELECT Student.*;",
+        "SELECT * FROM Student;",
+        "GET ALL FROM Student;"
+      ],
+      "correct_index": 2,
+      "explanation": "SELECT * FROM tablename; retrieves all columns (the * means 'all columns') of every row. This is the standard way to see all data in a table.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q006",
+      "topic": "SELECT and WHERE Clause",
+      "question": "What does WHERE Marks BETWEEN 80 AND 100 do in a SELECT query?",
+      "options": [
+        "Returns rows where Marks is greater than 80 but less than 100 (exclusive of both ends)",
+        "Returns rows where Marks is exactly 80 or exactly 100",
+        "Returns rows where Marks is 80 or more and 100 or less (inclusive of both endpoints)",
+        "Returns rows where Marks is outside the range 80-100"
+      ],
+      "correct_index": 2,
+      "explanation": "BETWEEN ... AND is inclusive of both boundary values. WHERE Marks BETWEEN 80 AND 100 returns rows where Marks >= 80 AND Marks <= 100. Both 80 and 100 are included in the results.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q007",
+      "topic": "SELECT and WHERE Clause",
+      "question": "In the LIKE operator, what does the % wildcard match?",
+      "options": [
+        "Exactly one character",
+        "Only alphabetic characters",
+        "Only numeric characters",
+        "Zero or more characters of any type"
+      ],
+      "correct_index": 3,
+      "explanation": "In LIKE, % matches zero or more characters of any type. For example, LIKE 'P%' matches 'Priya', 'Pankaj', 'P', and even 'Priyanka'. To match exactly one character, use the _ (underscore) wildcard.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q008",
+      "topic": "SELECT and WHERE Clause",
+      "question": "What does WHERE Name LIKE '_r%' match?",
+      "options": [
+        "Names that start with 'r'",
+        "Names where the second character is 'r'",
+        "Names that end with 'r'",
+        "Names that contain the letter 'r'"
+      ],
+      "correct_index": 1,
+      "explanation": "The _ wildcard matches exactly one character. So '_r%' means: one character (any), then 'r', then anything. This matches names where the second letter is 'r' — such as 'Priya', 'Arjun', or 'Brijesh'.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q009",
+      "topic": "DML Commands",
+      "question": "Which SQL command is used to modify existing data in a table?",
+      "options": [
+        "INSERT",
+        "ALTER",
+        "UPDATE",
+        "CHANGE"
+      ],
+      "correct_index": 2,
+      "explanation": "UPDATE is the DML command used to modify existing data. Example: UPDATE Student SET Marks = 95.0 WHERE RollNo = 101; changes only the row where RollNo is 101. INSERT adds new rows; ALTER changes table structure.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q010",
+      "topic": "DML Commands",
+      "question": "What is the key difference between DELETE FROM Student; and DROP TABLE Student;?",
+      "options": [
+        "Both remove all data and the table structure",
+        "DELETE removes all rows but keeps the table structure; DROP removes both all rows and the table structure",
+        "DELETE removes only one row; DROP removes all rows",
+        "There is no difference between them"
+      ],
+      "correct_index": 1,
+      "explanation": "DELETE FROM Student; (without WHERE) removes all rows from the table but the table itself — its columns and constraints — still exists. DROP TABLE Student; is a DDL command that deletes the entire table including its structure permanently.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q011",
+      "topic": "SELECT and WHERE Clause",
+      "question": "What is the default sorting order of ORDER BY in SQL?",
+      "options": [
+        "DESC (descending — largest to smallest)",
+        "Random order",
+        "ASC (ascending — smallest to largest)",
+        "ORDER BY always requires you to specify ASC or DESC"
+      ],
+      "correct_index": 2,
+      "explanation": "ORDER BY defaults to ASC (ascending order) if neither ASC nor DESC is specified. For numbers this means smallest to largest; for text it means A to Z. You must explicitly write DESC if you want the opposite order.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q012",
+      "topic": "Data Types and Constraints",
+      "question": "Which constraint ensures that a column cannot contain a NULL (empty) value?",
+      "options": [
+        "UNIQUE",
+        "NOT NULL",
+        "DEFAULT",
+        "CHECK"
+      ],
+      "correct_index": 1,
+      "explanation": "NOT NULL is the constraint that prevents a column from being left empty (NULL). If you try to INSERT a row without providing a value for a NOT NULL column, the database will reject the operation.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q013",
+      "topic": "SELECT and WHERE Clause",
+      "question": "Which SQL query correctly retrieves the names of students who scored more than 80 marks?",
+      "options": [
+        "SELECT * WHERE Marks > 80 FROM Student;",
+        "SELECT Name FROM Student WHERE Marks > 80;",
+        "SELECT Name WHERE Marks > 80;",
+        "GET Name FROM Student WHERE Marks > 80;"
+      ],
+      "correct_index": 1,
+      "explanation": "The correct SQL syntax is SELECT columns FROM table WHERE condition. So SELECT Name FROM Student WHERE Marks > 80; retrieves only the Name column for rows where Marks exceeds 80.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q014",
+      "topic": "DDL Commands",
+      "question": "Which SQL command adds a new column 'Email' of type VARCHAR(50) to an existing Student table?",
+      "options": [
+        "INSERT COLUMN Email VARCHAR(50) INTO Student;",
+        "CREATE COLUMN Email VARCHAR(50) IN Student;",
+        "ALTER TABLE Student ADD COLUMN Email VARCHAR(50);",
+        "UPDATE TABLE Student ADD Email VARCHAR(50);"
+      ],
+      "correct_index": 2,
+      "explanation": "ALTER TABLE is used to modify an existing table's structure. The ADD COLUMN clause adds a new column. Full syntax: ALTER TABLE tablename ADD COLUMN columnname datatype;",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch09_q015",
+      "topic": "Data Types and Constraints",
+      "question": "A school database column stores each student's class (e.g., 11, 12). Which MySQL data type is most appropriate?",
+      "options": [
+        "VARCHAR(10)",
+        "DATE",
+        "FLOAT",
+        "INT"
+      ],
+      "correct_index": 3,
+      "explanation": "Class values like 11 and 12 are whole numbers, so INT is the most appropriate data type. FLOAT is for decimal numbers, DATE for dates, and VARCHAR for variable-length text — none of these fit whole-number class values.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch09_q016",
+      "topic": "DML Commands",
+      "question": "What happens if you run UPDATE Student SET Marks = 90; without a WHERE clause?",
+      "options": [
+        "Only the first row's Marks is set to 90",
+        "The query fails with a syntax error",
+        "Every row in the Student table has its Marks set to 90",
+        "Only NULL Marks values are updated to 90"
+      ],
+      "correct_index": 2,
+      "explanation": "UPDATE without a WHERE clause affects every row in the table. UPDATE Student SET Marks = 90; would overwrite the Marks of every student to 90 — a very common and serious mistake. Always include a WHERE clause to target specific rows.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch09_q017",
+      "topic": "Introduction to SQL",
+      "question": "SQL is described as 'non-procedural'. What does this mean?",
+      "options": [
+        "SQL cannot be used for any procedures or functions",
+        "You specify WHAT data you want and the DBMS figures out HOW to retrieve it",
+        "SQL must be written in a specific step-by-step procedure",
+        "SQL does not work with stored procedures"
+      ],
+      "correct_index": 1,
+      "explanation": "Non-procedural means you describe WHAT you want (e.g., 'give me all students with marks above 80') and the DBMS determines the optimal HOW internally. In procedural languages like Python, you must specify each step of how to find the data yourself.",
+      "difficulty": "Hard"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch09_c01",
+      "title": "Create School Database",
+      "description": "Write SQL to create a database called 'School', select it for use, then create a table 'Student' with columns: RollNo (INT, Primary Key), Name (VARCHAR(30), NOT NULL), Class (INT), Marks (FLOAT).",
+      "starter_code": "-- Task: Create a database and a Students table\n\n-- Step 1: Create a database named 'School'\n-- YOUR SQL HERE\n\n-- Step 2: Use the School database\n-- YOUR SQL HERE\n\n-- Step 3: Create a Students table with columns:\n--   RollNo (INT, Primary Key), Name (VARCHAR 50),\n--   Class (VARCHAR 10), Marks (DECIMAL 5,2)\n-- YOUR SQL HERE\n\n-- Step 4: Show all tables in the database\n-- YOUR SQL HERE",
+      "expected_output": "Query OK, 1 row affected (database created)\nQuery OK, 0 rows affected (database selected)\nQuery OK, 0 rows affected (table created)",
+      "hint": "Use CREATE DATABASE first, then USE to select it, then CREATE TABLE with column names and their data types. Don't forget PRIMARY KEY after RollNo's data type.",
+      "test_cases": []
+    },
+    {
+      "id": "ch09_c02",
+      "title": "Insert Student Records",
+      "description": "Write SQL to insert 5 student records into the Student table (RollNo, Name, Class, Marks), then write a SELECT statement to display all records. Use these students: (101, 'Priya', 11, 92.5), (102, 'Rahul', 11, 78.0), (103, 'Anjali', 12, 88.5), (104, 'Arjun', 12, 65.0), (105, 'Sneha', 11, 95.0).",
+      "starter_code": "-- Task: Insert records and retrieve data\n\n-- Step 1: Insert 3 student records into Students table\n-- YOUR SQL HERE\n\n-- Step 2: Select all records\n-- YOUR SQL HERE",
+      "expected_output": "+--------+--------+-------+-------+\n| RollNo | Name   | Class | Marks |\n+--------+--------+-------+-------+\n|    101 | Priya  |    11 |  92.5 |\n|    102 | Rahul  |    11 |  78.0 |\n|    103 | Anjali |    12 |  88.5 |\n|    104 | Arjun  |    12 |  65.0 |\n|    105 | Sneha  |    11 |  95.0 |\n+--------+--------+-------+-------+\n5 rows in set",
+      "hint": "Each INSERT INTO Student VALUES (...) must provide values in the exact order of columns: RollNo (INT), Name (VARCHAR), Class (INT), Marks (FLOAT). Use SELECT * FROM Student; to display all rows.",
+      "test_cases": []
+    },
+    {
+      "id": "ch09_c03",
+      "title": "Query with WHERE Clause",
+      "description": "Using the Student table (with the 5 records from the previous exercise), write four separate SELECT queries: (a) Display all details of students who scored more than 85 marks. (b) Display names of all students in Class 11. (c) Display all details of students whose name starts with the letter 'A'. (d) Display all students ordered by their marks from highest to lowest.",
+      "starter_code": "-- Task: Filter data using WHERE clause\n\n-- (a) Select students with Marks > 85\n-- YOUR SQL HERE\n\n-- (b) Select students from Class '11A'\n-- YOUR SQL HERE\n\n-- (c) Select students with Marks between 70 and 90\n-- YOUR SQL HERE",
+      "expected_output": "-- (a) Marks > 85:\nPriya (92.5), Anjali (88.5), Sneha (95.0)\n\n-- (b) Class 11 names:\nPriya, Rahul, Sneha\n\n-- (c) Names starting with A:\nAnjali (88.5), Arjun (65.0)\n\n-- (d) Ordered by marks descending:\nSneha(95.0), Priya(92.5), Anjali(88.5), Rahul(78.0), Arjun(65.0)",
+      "hint": "For (a) use WHERE Marks > 85. For (b) SELECT only the Name column and use WHERE Class = 11. For (c) use LIKE 'A%' — % matches any characters after A. For (d) use ORDER BY Marks DESC (DESC means highest first).",
+      "test_cases": []
+    },
+    {
+      "id": "ch09_c04",
+      "title": "Update and Delete Records",
+      "description": "Write SQL to: (a) Update Priya's marks (RollNo = 101) to 95.5. (b) Delete the student record with RollNo = 104 (Arjun). After each operation, write a SELECT * FROM Student; to verify the changes.",
+      "starter_code": "-- Task: Modify and remove records\n\n-- (a) Update Priya's marks to 95\n-- YOUR SQL HERE\n\n-- Show the updated table\n-- YOUR SQL HERE\n\n-- (b) Delete the student with the lowest marks\n-- YOUR SQL HERE\n\n-- Show the final table\n-- YOUR SQL HERE",
+      "expected_output": "-- After UPDATE:\n+--------+--------+-------+-------+\n| RollNo | Name   | Class | Marks |\n+--------+--------+-------+-------+\n|    101 | Priya  |    11 |  95.5 |\n|    102 | Rahul  |    11 |  78.0 |\n|    103 | Anjali |    12 |  88.5 |\n|    104 | Arjun  |    12 |  65.0 |\n|    105 | Sneha  |    11 |  95.0 |\n+--------+--------+-------+-------+\n\n-- After DELETE:\n+--------+--------+-------+-------+\n| RollNo | Name   | Class | Marks |\n+--------+--------+-------+-------+\n|    101 | Priya  |    11 |  95.5 |\n|    102 | Rahul  |    11 |  78.0 |\n|    103 | Anjali |    12 |  88.5 |\n|    105 | Sneha  |    11 |  95.0 |\n+--------+--------+-------+-------+\n4 rows in set",
+      "hint": "UPDATE syntax: UPDATE tablename SET column = value WHERE condition;. DELETE syntax: DELETE FROM tablename WHERE condition;. Always use a WHERE clause — without it, UPDATE changes all rows and DELETE removes all rows!",
+      "test_cases": []
+    }
+  ]
+}

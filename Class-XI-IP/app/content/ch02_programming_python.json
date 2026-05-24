@@ -1,0 +1,281 @@
+{
+  "chapter": 2,
+  "title": "Programming with Python",
+  "slug": "programming-python",
+  "unit": "II",
+  "topics": [
+    {
+      "id": "introduction-to-python",
+      "title": "Introduction to Python",
+      "content": "Python is a programming language created by Guido van Rossum and first released in 1991. Surprisingly, it is NOT named after the snake — it is named after a British comedy TV show called 'Monty Python's Flying Circus' that Guido enjoyed. Today, Python is maintained by a non-profit organisation called the Python Software Foundation (PSF). It is one of the most popular programming languages in the world, used by companies like Google, YouTube, Instagram, and even NASA."
+    },
+    {
+      "id": "features-of-python",
+      "title": "Features of Python",
+      "content": "Python has several features that make it a great first language to learn. It is simple and readable — Python code looks almost like plain English, so beginners can understand it quickly. Python is interpreted, which means it runs one line at a time without needing a separate compilation step. It supports object-oriented programming (OOP), is open source (free to download and use), and is portable (the same program works on Windows, Mac, and Linux without any changes). Python also has a large standard library with thousands of ready-made modules for tasks like mathematics, file handling, and networking."
+    },
+    {
+      "id": "uses-of-python",
+      "title": "Uses of Python",
+      "content": "Python is used in an amazingly wide range of fields. In web development, popular frameworks like Django (which powers Instagram) and Flask let developers build websites quickly. In data science and artificial intelligence, libraries such as NumPy, Pandas, and TensorFlow make Python the top choice for analysing data and building AI models. Python is also used for automation — writing scripts that perform repetitive tasks automatically. Scientists use it for research and calculations, and game developers use the Pygame library to build games."
+    },
+    {
+      "id": "python-installation-idle",
+      "title": "Python Installation and IDLE",
+      "content": "Python can be downloaded for free from python.org. Always install Python 3.x — Python 2.x is outdated and no longer supported. When you install Python, it comes with a built-in editor called IDLE (Integrated Development and Learning Environment), which gives you a simple way to write and run Python programs right away. After installation, you can open a terminal or command prompt and type 'python --version' to confirm Python is installed correctly. IDLE is a great starting point for beginners because it highlights code in colours and makes it easy to spot mistakes."
+    },
+    {
+      "id": "interactive-mode-vs-script-mode",
+      "title": "Interactive Mode vs Script Mode",
+      "content": "Python can be used in two ways: Interactive Mode and Script Mode. In Interactive Mode, you see the >>> prompt (called the Python shell), and whatever you type runs immediately — perfect for quick experiments like checking what 5 + 3 gives. In Script Mode, you write your complete program in a file with the .py extension (for example, hello.py) and then run the entire file at once — this is how real programs are written and saved. Use Interactive Mode for quick calculations and testing; use Script Mode when building programs you want to save and use again."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Interpreter",
+      "definition": "A program that reads and executes code one line at a time, without converting the whole program first. Python uses an interpreter, which makes it easy to test code quickly."
+    },
+    {
+      "term": "IDLE",
+      "definition": "Integrated Development and Learning Environment — the built-in editor that comes with Python. It lets you write, run, and debug Python programs in one place."
+    },
+    {
+      "term": "Interactive Mode",
+      "definition": "A way to use Python where you type one line at a time and see the result immediately at the >>> prompt. Best for quick experiments and learning."
+    },
+    {
+      "term": "Script Mode",
+      "definition": "A way to use Python where you write a complete program in a .py file and run the whole file at once. Best for programs you want to save and reuse."
+    },
+    {
+      "term": "Source Code",
+      "definition": "The human-readable instructions written by a programmer in a programming language like Python, before it is run by the interpreter."
+    },
+    {
+      "term": ".py Extension",
+      "definition": "The file extension used for Python program files. For example, 'calculator.py' tells the operating system and Python that this file contains Python code."
+    },
+    {
+      "term": "Open Source",
+      "definition": "Software whose source code is freely available for anyone to use, study, change, and distribute. Python is open source — you can download and use it for free, forever."
+    },
+    {
+      "term": "Portable",
+      "definition": "A property of Python meaning the same Python program can run on different operating systems (Windows, Mac, Linux) without needing to be rewritten."
+    },
+    {
+      "term": "Guido van Rossum",
+      "definition": "The Dutch programmer who created Python. He started designing it in the late 1980s and released the first version in 1991. He is often called Python's 'Benevolent Dictator For Life' (BDFL)."
+    },
+    {
+      "term": "Standard Library",
+      "definition": "A large collection of ready-made modules that come bundled with Python. These modules provide tools for mathematics, file operations, networking, date/time handling, and much more."
+    }
+  ],
+  "summary": "Python is a simple, readable, and powerful programming language created by Guido van Rossum in 1991, named after the comedy show 'Monty Python's Flying Circus'. It is interpreted, open source, portable, and comes with a large standard library. Python is used worldwide for web development, data science, AI, automation, and scientific computing. You can run Python in Interactive Mode (type and see results instantly at the >>> prompt) or Script Mode (write a .py file and run it). The built-in IDLE editor makes it easy for beginners to start coding right away.",
+  "mcqs": [
+    {
+      "id": "ch02_q001",
+      "topic": "Introduction to Python",
+      "question": "Who created the Python programming language?",
+      "options": [
+        "Bill Gates",
+        "Linus Torvalds",
+        "Guido van Rossum",
+        "Dennis Ritchie"
+      ],
+      "correct_index": 2,
+      "explanation": "Guido van Rossum created Python and released its first version in 1991. Bill Gates co-founded Microsoft, Linus Torvalds created Linux, and Dennis Ritchie created the C language.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q002",
+      "topic": "Introduction to Python",
+      "question": "Python is named after which of the following?",
+      "options": [
+        "The Python snake",
+        "A British comedy TV show",
+        "A Greek mathematician",
+        "A type of computer processor"
+      ],
+      "correct_index": 1,
+      "explanation": "Python is named after 'Monty Python's Flying Circus', a British comedy show that Guido van Rossum enjoyed. It is NOT named after the snake.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q003",
+      "topic": "Interactive Mode vs Script Mode",
+      "question": "What does the >>> symbol represent in Python?",
+      "options": [
+        "A comparison operator meaning 'greater than'",
+        "The Python shell prompt in Interactive Mode",
+        "An arrow showing program flow",
+        "A shortcut to run a script file"
+      ],
+      "correct_index": 1,
+      "explanation": "The >>> symbol is the prompt shown in Python's Interactive Mode (the Python shell). It means Python is ready and waiting for you to type a command.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q004",
+      "topic": "Interactive Mode vs Script Mode",
+      "question": "Rahul wants to save his program and run it again tomorrow. Which mode should he use?",
+      "options": [
+        "Interactive Mode",
+        "Debug Mode",
+        "Script Mode",
+        "Console Mode"
+      ],
+      "correct_index": 2,
+      "explanation": "Script Mode lets you write a program in a .py file and save it on your computer. Interactive Mode results are not saved — they disappear when you close the shell.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q005",
+      "topic": "Features of Python",
+      "question": "Which of the following is NOT a feature of Python?",
+      "options": [
+        "Open Source",
+        "Portable",
+        "Requires compilation before running",
+        "Large standard library"
+      ],
+      "correct_index": 2,
+      "explanation": "Python is an interpreted language — it does NOT require compilation. The code is executed line by line directly. Open source, portable, and having a large standard library are genuine Python features.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch02_q006",
+      "topic": "Features of Python",
+      "question": "What does 'interpreted' mean for a programming language like Python?",
+      "options": [
+        "The code is translated into machine language all at once before running",
+        "The code is executed one line at a time without a separate compilation step",
+        "The programmer must translate the code manually",
+        "The code runs only inside a web browser"
+      ],
+      "correct_index": 1,
+      "explanation": "In an interpreted language, a program called the interpreter reads and executes the source code one line at a time. This is different from compiled languages (like C) where the entire code is first translated into machine code.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch02_q007",
+      "topic": "Features of Python",
+      "question": "Priya writes a Python program on her Windows laptop. Her friend Arjun uses a Mac. What will happen if Arjun tries to run the same Python file?",
+      "options": [
+        "It will not work — Python programs are Windows-only",
+        "It will work, because Python is portable",
+        "Arjun must rewrite the entire program for Mac",
+        "The file must be converted to a different format first"
+      ],
+      "correct_index": 1,
+      "explanation": "Python is portable — the same Python code runs on Windows, Mac, and Linux without any changes. This is one of Python's biggest advantages.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch02_q008",
+      "topic": "Python Installation and IDLE",
+      "question": "What is the correct file extension for a Python program file?",
+      "options": [
+        ".python",
+        ".txt",
+        ".py",
+        ".exe"
+      ],
+      "correct_index": 2,
+      "explanation": "Python program files use the .py extension. For example, a file named 'hello.py' is a Python source file. This is how Python and the operating system recognise it as a Python program.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q009",
+      "topic": "Python Installation and IDLE",
+      "question": "What does IDLE stand for?",
+      "options": [
+        "Interactive Data Language Editor",
+        "Integrated Development and Learning Environment",
+        "Internet Development and Learning Engine",
+        "Integrated Debug and Launch Environment"
+      ],
+      "correct_index": 1,
+      "explanation": "IDLE stands for Integrated Development and Learning Environment. It is the free code editor that comes bundled with Python and is designed to help beginners write and run Python programs.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch02_q010",
+      "topic": "Uses of Python",
+      "question": "Which of the following popular websites/applications was built using Django, a Python web framework?",
+      "options": [
+        "YouTube",
+        "Instagram",
+        "Twitter",
+        "LinkedIn"
+      ],
+      "correct_index": 1,
+      "explanation": "Instagram was built using Django, which is a popular Python web framework. Python's Django and Flask frameworks are widely used for web development.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch02_q011",
+      "topic": "Uses of Python",
+      "question": "A data scientist wants to analyse sales data from thousands of shops across India. Which language is the best choice for this task?",
+      "options": [
+        "HTML",
+        "Python",
+        "CSS",
+        "SQL only"
+      ],
+      "correct_index": 1,
+      "explanation": "Python is the top choice for data science and data analysis. Libraries like Pandas and NumPy make it easy to handle large amounts of data. HTML and CSS are for web pages, not data analysis.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch02_q012",
+      "topic": "Interactive Mode vs Script Mode",
+      "question": "In Interactive Mode, when does Python execute your code?",
+      "options": [
+        "Only when you save the file",
+        "After you have written all the lines",
+        "Immediately after you press Enter on each line",
+        "When you click the Run button"
+      ],
+      "correct_index": 2,
+      "explanation": "In Interactive Mode, Python executes each line immediately after you press Enter. You see the result right away, which makes it perfect for quick experiments and testing.",
+      "difficulty": "Easy"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch02_c01",
+      "title": "Hello, World!",
+      "description": "Write your very first Python program! Print the classic message 'Hello, World!' and then print a personalised greeting with your name. This is the traditional first program every programmer writes.",
+      "starter_code": "# My First Python Program\n# Use print() to display messages on the screen\n\n# Task 1: Print the classic \"Hello, World!\" message\n# YOUR CODE HERE\n\n# Task 2: Print a greeting with your name\n# Hint: print(\"Hello! My name is ...\")\n# YOUR CODE HERE\n\n# Task 3: Print one more line about yourself\n# YOUR CODE HERE",
+      "expected_output": "Hello, World!\nHello! My name is Alex.\nI am learning Python!",
+      "hint": "The print() function displays whatever you put inside the brackets and quotes. Each print() starts on a new line. Try changing 'Your Name' to your real name!",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Hello, World!\nHello! My name is Alex.\nI am learning Python!",
+          "stdin_values": []
+        }
+      ]
+    },
+    {
+      "id": "ch02_c02",
+      "title": "Simple Calculator",
+      "description": "Build a simple calculator that takes two numbers as input from the user and prints their sum, difference, product, and quotient. This challenge helps you practise using input(), converting to numbers, and basic arithmetic operators.",
+      "starter_code": "# Simple Calculator\n# Get two numbers from the user and perform all four operations\n\nnum1 = int(input(\"Enter the first number: \"))\nnum2 = int(input(\"Enter the second number: \"))\n\n# Calculate sum, difference, product, and quotient\n# YOUR CODE HERE\n\n# Print each result on its own line, e.g.:\n# print(\"Sum:\", ...)\n# YOUR CODE HERE",
+      "expected_output": "Enter the first number: 10\nEnter the second number: 4\nSum: 14\nDifference: 6\nProduct: 40\nQuotient: 2.5",
+      "hint": "Remember to wrap input() with int() so Python treats the typed value as a number, not text. Without int(), typing 10 and 4 would give '104' for addition (string joining) instead of 14!",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter the first number: 10\nEnter the second number: 4\nSum: 14\nDifference: 6\nProduct: 40\nQuotient: 2.5",
+          "stdin_values": [
+            "10",
+            "4"
+          ]
+        }
+      ]
+    }
+  ]
+}

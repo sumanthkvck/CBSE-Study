@@ -1,0 +1,344 @@
+{
+  "chapter": 6,
+  "title": "List Manipulation",
+  "unit": "II",
+  "slug": "lists",
+  "topics": [
+    {
+      "id": "introduction-to-lists",
+      "title": "Introduction to Lists",
+      "content": "A list is an ordered, mutable collection that can store multiple items in a single variable. Lists allow duplicates and can hold different data types — integers, strings, floats, and even other lists — all in the same list. You create a list using square brackets: marks = [85, 92, 78, 95, 88] or mixed = [1, \"hello\", 3.14, True]. An empty list is created as empty = [] or empty = list(). Lists are indexed starting from 0, meaning the first element is at position 0."
+    },
+    {
+      "id": "indexing-and-slicing",
+      "title": "List Operations — Indexing and Slicing",
+      "content": "You access a single element using its index: marks[0] gives the first element, marks[-1] gives the last element (negative indexing counts from the right end). Slicing extracts a portion of the list: marks[1:4] gives elements at indices 1, 2, and 3 (the stop index is excluded). marks[::2] gives every alternate element. Concatenation combines two lists: [1, 2] + [3, 4] gives [1, 2, 3, 4]. Repetition creates repeated copies: [0] * 5 gives [0, 0, 0, 0, 0]. You can check if an item exists using the in operator: 85 in marks returns True."
+    },
+    {
+      "id": "adding-and-removing",
+      "title": "Built-in List Functions — Adding and Removing",
+      "content": "append(item) adds an item at the end of the list. insert(index, item) inserts an item at a specific position. extend(list2) adds all items of list2 to the end of list1. remove(item) deletes the first occurrence of the given item and raises a ValueError if the item is not found. pop() removes and returns the last item; pop(index) removes and returns the item at the specified index. clear() removes all items from the list, leaving an empty list."
+    },
+    {
+      "id": "ordering-and-info",
+      "title": "Built-in List Functions — Ordering and Info",
+      "content": "sort() arranges the list in ascending order in place — the original list is changed. Use sort(reverse=True) for descending order. sorted(list) returns a new sorted list without modifying the original. reverse() reverses the list in place. len(list) returns the total number of items. count(item) counts how many times an item appears. index(item) returns the position of the first occurrence of an item. min(list), max(list), and sum(list) return the minimum value, maximum value, and total sum respectively."
+    },
+    {
+      "id": "traversal-and-nested-lists",
+      "title": "List Traversal and Nested Lists",
+      "content": "You can traverse a list using for item in marks: to process each element directly. When you need the index as well, use for i in range(len(marks)): and access marks[i]. A nested list (a list containing other lists) is used to represent 2D data such as a matrix or a student marks table. Access elements using double indexing: matrix[row][col]. For example, grades = [[85, 90], [78, 82], [92, 88]] — grades[1][0] gives 78, which is the second student's first subject mark."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "List",
+      "definition": "An ordered, mutable (changeable) collection of items in Python. Items can be of different types and duplicates are allowed. Defined with square brackets: marks = [88, 92, 76, 85]. Lists are indexed from 0."
+    },
+    {
+      "term": "Index",
+      "definition": "The position of an element in a list. Positive index starts at 0 from the left. Negative index starts at -1 from the right. Example: marks[0] gives the first element, marks[-1] gives the last."
+    },
+    {
+      "term": "Slice",
+      "definition": "A way to extract a portion of a list using list[start:stop:step]. The stop index is not included. Example: marks[1:4] gives elements at indices 1, 2, 3. marks[::-1] reverses the entire list."
+    },
+    {
+      "term": "Mutable",
+      "definition": "A property meaning the object can be changed after it is created. Lists are mutable — you can add, remove, or modify elements. This is unlike strings or tuples which cannot be changed."
+    },
+    {
+      "term": "append()",
+      "definition": "A list method that adds a single item to the END of the list. Example: marks.append(95) adds 95 at the end. To add multiple items at once, use extend() instead."
+    },
+    {
+      "term": "pop()",
+      "definition": "A list method that removes AND returns an element. pop() with no argument removes the last element. pop(index) removes the element at the given position. The removed value can be stored in a variable."
+    },
+    {
+      "term": "sort()",
+      "definition": "A list method that sorts the list IN PLACE in ascending order — the original list is modified. Use sort(reverse=True) for descending order. Unlike sorted(), it does not return a new list."
+    },
+    {
+      "term": "sorted()",
+      "definition": "A built-in function that returns a NEW sorted list without changing the original list. Example: new_list = sorted(marks) leaves marks unchanged. Accepts a reverse=True argument for descending order."
+    },
+    {
+      "term": "Nested List",
+      "definition": "A list that contains other lists as its elements. Used to represent 2D (tabular) data like a marks table or matrix. Access elements with double indexing: matrix[row][column]."
+    },
+    {
+      "term": "Traversal",
+      "definition": "Going through each element of a list one by one. Two common methods: for item in my_list: (direct element access) and for i in range(len(my_list)): (index-based access, useful when position matters)."
+    },
+    {
+      "term": "Heterogeneous",
+      "definition": "A list that contains items of different data types. Example: mixed = [1, 'Priya', 3.14, True]. Python lists are heterogeneous — unlike arrays in languages like C or Java."
+    },
+    {
+      "term": "len()",
+      "definition": "A built-in function that returns the number of items in a list. Example: len([10, 20, 30]) returns 3. It works on strings, tuples, and other sequences as well."
+    },
+    {
+      "term": "Concatenation",
+      "definition": "Combining two lists using the + operator to create a new list. Example: [1, 2] + [3, 4] gives [1, 2, 3, 4]. The original lists are not changed."
+    }
+  ],
+  "summary": "Lists are one of Python's most versatile and widely used data structures. They store ordered, mutable collections of items that can include any mix of data types including duplicates. You can access individual elements using positive or negative indices, and extract sub-lists using slicing with start, stop, and step values. Python provides a rich set of built-in methods to modify lists — append and insert for adding, remove and pop for deleting, sort and reverse for ordering. The len(), min(), max(), sum(), count(), and index() functions provide useful information about list contents. List traversal with for loops lets you process every element, while nested lists enable 2D data storage for tables and matrices.",
+  "mcqs": [
+    {
+      "id": "ch06_q001",
+      "topic": "Introduction to Lists",
+      "question": "For the list marks = [85, 92, 78, 95, 88], what does marks[-1] return?",
+      "options": [
+        "85",
+        "78",
+        "88",
+        "95"
+      ],
+      "correct_index": 2,
+      "explanation": "Negative indexing counts from the right end. -1 refers to the last element, which is 88. -2 would be 95, -3 would be 78, and so on.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q002",
+      "topic": "Indexing and Slicing",
+      "question": "What is the output of [1, 2, 3, 4, 5][1:3]?",
+      "options": [
+        "[1, 2, 3]",
+        "[2, 3]",
+        "[2, 3, 4]",
+        "[1, 2]"
+      ],
+      "correct_index": 1,
+      "explanation": "Slicing [1:3] includes indices 1 and 2 but excludes index 3. Elements at index 1 and 2 are 2 and 3. So the result is [2, 3].",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q003",
+      "topic": "Adding and Removing",
+      "question": "What is the difference between append() and extend()?",
+      "options": [
+        "append() adds multiple items; extend() adds one item",
+        "append() adds one item at the end; extend() adds all items of another list",
+        "Both do exactly the same thing",
+        "append() inserts at a position; extend() adds at the end"
+      ],
+      "correct_index": 1,
+      "explanation": "append(item) adds a single item to the end of the list. extend(list2) adds every element of list2 one by one. For example, [1,2].append([3,4]) gives [1,2,[3,4]] but [1,2].extend([3,4]) gives [1,2,3,4].",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch06_q004",
+      "topic": "Adding and Removing",
+      "question": "Which list method removes an item AND returns it?",
+      "options": [
+        "remove()",
+        "delete()",
+        "pop()",
+        "clear()"
+      ],
+      "correct_index": 2,
+      "explanation": "pop() removes an element from the list AND returns its value. pop() with no argument removes the last element. pop(index) removes the element at that position. remove() only deletes — it does not return the value.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q005",
+      "topic": "Ordering and Info",
+      "question": "What is the key difference between sort() and sorted()?",
+      "options": [
+        "sort() works on numbers only; sorted() works on any list",
+        "sort() returns a new list; sorted() modifies the original",
+        "sort() modifies the list in place; sorted() returns a new sorted list",
+        "There is no difference between them"
+      ],
+      "correct_index": 2,
+      "explanation": "sort() modifies the original list in place and returns None. sorted() leaves the original list unchanged and returns a brand-new sorted list. Use sorted() when you want to keep the original order intact.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch06_q006",
+      "topic": "Indexing and Slicing",
+      "question": "What is the result of [0] * 3?",
+      "options": [
+        "[0, 0]",
+        "[0, 0, 0]",
+        "[3]",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "The * operator repeats a list. [0] * 3 creates a new list with 0 repeated three times: [0, 0, 0]. Similarly [1, 2] * 2 gives [1, 2, 1, 2].",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q007",
+      "topic": "Traversal and Nested Lists",
+      "question": "For matrix = [[10, 20], [30, 40], [50, 60]], what is matrix[2][0]?",
+      "options": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "correct_index": 3,
+      "explanation": "matrix[2] selects the third row (index 2): [50, 60]. Then [0] selects the first element of that row: 50. Double indexing [row][col] is used for nested lists.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch06_q008",
+      "topic": "Ordering and Info",
+      "question": "What does len([10, 20, 30]) return?",
+      "options": [
+        "10",
+        "20",
+        "3",
+        "60"
+      ],
+      "correct_index": 2,
+      "explanation": "len() counts the number of items in the list. The list [10, 20, 30] has three elements, so len() returns 3. It counts items, not their values.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q009",
+      "topic": "Ordering and Info",
+      "question": "Which method changes the list itself rather than returning a new list?",
+      "options": [
+        "sorted()",
+        "list()",
+        "sort()",
+        "reversed()"
+      ],
+      "correct_index": 2,
+      "explanation": "sort() modifies the list in place — the original list is rearranged. sorted() returns a new list. reversed() returns an iterator, not a list. list() converts something to a list.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch06_q010",
+      "topic": "Introduction to Lists",
+      "question": "After: list1 = [1, 2]; list2 = list1; list2.append(3); what is list1?",
+      "options": [
+        "[1, 2]",
+        "[1, 2, 3]",
+        "[3]",
+        "Error"
+      ],
+      "correct_index": 1,
+      "explanation": "list2 = list1 does NOT create a copy — both variables point to the SAME list object in memory. When you append to list2, you are modifying the shared list. So list1 also becomes [1, 2, 3]. Use list1.copy() or list(list1) to make an independent copy.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch06_q011",
+      "topic": "Adding and Removing",
+      "question": "After: names = ['Priya', 'Rahul', 'Anita']; names.insert(1, 'Kiran'); what is names?",
+      "options": [
+        "['Priya', 'Rahul', 'Anita', 'Kiran']",
+        "['Kiran', 'Priya', 'Rahul', 'Anita']",
+        "['Priya', 'Kiran', 'Rahul', 'Anita']",
+        "['Priya', 'Rahul', 'Kiran', 'Anita']"
+      ],
+      "correct_index": 2,
+      "explanation": "insert(1, 'Kiran') inserts 'Kiran' at index 1. The existing elements at index 1 and beyond are shifted right. Result: ['Priya', 'Kiran', 'Rahul', 'Anita'].",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch06_q012",
+      "topic": "Indexing and Slicing",
+      "question": "For scores = [45, 67, 82, 90, 55], what does scores[::2] return?",
+      "options": [
+        "[45, 82, 55]",
+        "[67, 90]",
+        "[45, 67, 82]",
+        "[55, 90, 82]"
+      ],
+      "correct_index": 0,
+      "explanation": "scores[::2] uses a step of 2, selecting every alternate element starting from index 0. Indices 0, 2, 4 give elements 45, 82, 55. Result: [45, 82, 55].",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch06_q013",
+      "topic": "Ordering and Info",
+      "question": "For nums = [5, 3, 8, 1, 9], what does nums.count(3) return?",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct_index": 2,
+      "explanation": "count(item) returns the number of times the item appears in the list. The value 3 appears exactly once in [5, 3, 8, 1, 9], so count(3) returns 1.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch06_q014",
+      "topic": "Traversal and Nested Lists",
+      "question": "Which of the following correctly prints the index AND value of each element in a list?",
+      "options": [
+        "for item in marks: print(marks, item)",
+        "for i in range(marks): print(i, marks[i])",
+        "for i in range(len(marks)): print(i, marks[i])",
+        "for i, marks in enumerate(): print(i)"
+      ],
+      "correct_index": 2,
+      "explanation": "range(len(marks)) generates valid index numbers 0, 1, 2... up to the last index. marks[i] then accesses the element at each index. This pattern is used when you need both the position and the value.",
+      "difficulty": "Medium"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch06_c01",
+      "title": "Find the Topper",
+      "description": "Take a list of 5 student marks. Find the maximum marks using the max() function. Then also find the maximum manually using a loop (without using max()). Print the topper's score both ways.\n\nFor example:\nmarks = [72, 85, 91, 68, 95]\nUsing max(): 95\nUsing loop: 95",
+      "starter_code": "# Find the maximum value in a list — two ways\n\nmarks = [85, 92, 78, 95, 88, 73, 90]\n\n# Method 1: use the built-in max() function\n# YOUR CODE HERE\n\n# Method 2: find max using a loop (no built-in)\n# YOUR CODE HERE\n\n# Print both results in the format shown\n# YOUR CODE HERE",
+      "expected_output": "Using max(): 95\nUsing loop: 95",
+      "hint": "Start with highest = marks[0]. In the loop, compare each mark — if it is greater than highest, update highest.",
+      "test_cases": []
+    },
+    {
+      "id": "ch06_c02",
+      "title": "Remove Duplicates",
+      "description": "Given the list numbers = [10, 20, 10, 30, 20, 40], create a new list that contains only the unique elements — no duplicates. Do NOT use set(). Use a for loop and check with the in operator.\n\nExpected output:\nOriginal: [10, 20, 10, 30, 20, 40]\nUnique: [10, 20, 30, 40]",
+      "starter_code": "# Remove duplicate elements while preserving order\n\nnumbers = [10, 20, 10, 30, 20, 40]\nprint(\"Original:\", numbers)\n\n# Create a new list with duplicates removed, keeping first occurrence\n# Do NOT use set() — preserve the order\n# YOUR CODE HERE\n\nprint(\"Unique:\", unique)",
+      "expected_output": "Original: [10, 20, 10, 30, 20, 40]\nUnique: [10, 20, 30, 40]",
+      "hint": "Before appending a number, check: if num not in unique. Only add it if it is not already in the unique list.",
+      "test_cases": []
+    },
+    {
+      "id": "ch06_c03",
+      "title": "Sort Student Marks",
+      "description": "Take a list of 5 student marks. Sort them in descending order (highest first). Print the sorted marks and show the rank of each student.\n\nExpected output:\nOriginal marks: [78, 92, 65, 88, 74]\nSorted (Rank 1 first): [92, 88, 78, 74, 65]\nRank 1: 92\nRank 2: 88\nRank 3: 78\nRank 4: 74\nRank 5: 65",
+      "starter_code": "# Sort student marks and display rankings\n\nmarks = [78, 92, 65, 88, 74]\nprint(\"Original marks:\", marks)\n\n# Sort in descending order (highest first = Rank 1)\n# YOUR CODE HERE\n\nprint(\"Sorted (Rank 1 first):\", sorted_marks)\nprint()\nprint(\"Rank  Marks\")\nprint(\"-\" * 15)\n\n# Print each rank and its marks\n# YOUR CODE HERE",
+      "expected_output": "Original marks: [78, 92, 65, 88, 74]\nSorted (Rank 1 first): [92, 88, 78, 74, 65]\nRank 1: 92\nRank 2: 88\nRank 3: 78\nRank 4: 74\nRank 5: 65",
+      "hint": "Use sorted(marks, reverse=True) to get a new sorted list from highest to lowest. Use enumerate(sorted_marks, start=1) to pair each mark with its rank number.",
+      "test_cases": []
+    },
+    {
+      "id": "ch06_c04",
+      "title": "Matrix Addition",
+      "description": "Create two 2x2 matrices as nested lists. Add them by adding their corresponding elements. Print the result matrix row by row.\n\nExpected output:\nMatrix A: [[1, 2], [3, 4]]\nMatrix B: [[5, 6], [7, 8]]\nSum Matrix:\n6 8\n10 12",
+      "starter_code": "# Add two 2x2 matrices\n\nA = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]\n\nprint(\"Matrix A:\", A)\nprint(\"Matrix B:\", B)\n\n# Create result matrix C = A + B using nested loops\n# C[i][j] = A[i][j] + B[i][j]\n# YOUR CODE HERE\n\nprint(\"A + B  =\", C)",
+      "expected_output": "Matrix A: [[1, 2], [3, 4]]\nMatrix B: [[5, 6], [7, 8]]\nSum Matrix:\n6 8\n10 12",
+      "hint": "Use two nested for loops — one for the row (i) and one for the column (j). result[i][j] = A[i][j] + B[i][j] adds the corresponding elements.",
+      "test_cases": []
+    }
+  ],
+  "study_guide": {
+    "intro_by_keyword": {
+      "list": "A Python list is an ordered, mutable sequence — you can store many values in one variable and change them freely.",
+      "python": "Python is a beginner-friendly, general-purpose programming language known for its simple, readable syntax."
+    },
+    "mnemonics_by_keyword": {
+      "list": "**Index starts at Zero** — remember '0-indexed': my_list[0] is the FIRST item, my_list[-1] is the LAST item.",
+      "python": "**IPO** — Input, Process, Output. Every Python program (and every computer program) does these three things."
+    },
+    "did_you_know_by_keyword": {
+      "list": [
+        "Python lists can hold mixed types — [1, 'hello', True, 3.14] is valid. Most languages only allow one type per array.",
+        "The append() method adds to the end in O(1) time on average — extremely fast even for very long lists."
+      ],
+      "python": [
+        "Python was named after the British comedy group 'Monty Python', not the snake! Creator Guido van Rossum was a fan.",
+        "Python is the most popular language for AI/ML and is used by Google, NASA, Netflix, and Instagram."
+      ]
+    }
+  }
+}

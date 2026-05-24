@@ -1,0 +1,245 @@
+{
+  "chapter": 1,
+  "title": "Introduction to Computer System",
+  "unit": "I",
+  "topics": [
+    {
+      "id": "computer-system-ipo",
+      "title": "Computer System and IPO Cycle",
+      "content": "A computer system is a complete set of hardware and software working together to receive data, process it, and produce useful results. This is called the IPO cycle — Input, Process, Output. For example, when you type your name on a keyboard (input), the computer processes the characters, and the screen displays them (output). Computers have evolved from large room-sized machines using vacuum tubes in the 1940s, to smaller transistor-based machines, then to tiny integrated circuits, and finally to today's powerful microprocessors that fit on a fingernail. Each generation became faster, smaller, cheaper, and more energy-efficient."
+    },
+    {
+      "id": "characteristics-of-computers",
+      "title": "Characteristics of Computers",
+      "content": "Computers have several qualities that make them extremely useful. They work at incredible speed — modern computers can execute millions of instructions per second (measured in MIPS or MFLOPS). They are highly accurate — as long as the program and input are correct, they never make calculation errors. They are diligent, meaning they can work for hours or days without getting tired, unlike humans. They are also versatile — the same computer can play music, solve maths problems, and browse the internet. Finally, they can store enormous amounts of data, from a few kilobytes up to petabytes."
+    },
+    {
+      "id": "cpu-components",
+      "title": "Basic Components — CPU",
+      "content": "The CPU (Central Processing Unit) is the brain of the computer. It has three main parts: the Arithmetic Logic Unit (ALU), which performs all mathematical calculations and logical comparisons; the Control Unit (CU), which directs the flow of data and instructions between components; and registers, which are tiny, ultra-fast memory slots inside the CPU that hold data being processed right now. Data enters through input devices, moves to memory, gets processed by the CPU, and the result is sent to output devices like the monitor or printer. All these parts communicate through pathways called buses."
+    },
+    {
+      "id": "computer-memory",
+      "title": "Computer Memory",
+      "content": "Memory stores data and instructions the computer needs. The smallest unit of storage is a bit (0 or 1); 8 bits make a byte. Larger units go: KB (1024 bytes), MB (1024 KB), GB (1024 MB), TB (1024 GB), and PB (1024 TB). Primary memory (RAM and ROM) is directly accessible by the CPU. RAM (Random Access Memory) is fast but volatile — it loses all data when power is cut, like your work disappearing if your laptop battery dies. ROM (Read-Only Memory) stores permanent boot instructions (BIOS) and is non-volatile. Cache memory sits between the CPU and RAM and stores frequently used data to speed things up. Secondary storage — hard disks, SSDs, pen drives — holds data permanently even without power."
+    },
+    {
+      "id": "hardware-and-software",
+      "title": "Hardware and Software",
+      "content": "Hardware refers to the physical parts of a computer you can touch — input devices (keyboard, mouse, scanner), output devices (monitor, printer, speakers), processing units (CPU), and storage devices (HDD, SSD). Software is the set of instructions that makes hardware useful. System software manages the computer itself — the Operating System (like Windows or Linux) is the most important, supported by language translators (compilers, interpreters) and utility programs (antivirus, disk cleaner). Application software is built for specific user tasks — generic applications like MS Office work for many purposes, while specific applications like a school management system or IRCTC's ticketing platform serve one particular need. Firmware is special software stored permanently in hardware chips (like a router's built-in program)."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "IPO Cycle",
+      "definition": "The three-step process every computer follows: Input (receive data), Process (perform operations on data), Output (deliver the result)."
+    },
+    {
+      "term": "CPU (Central Processing Unit)",
+      "definition": "The brain of the computer that fetches instructions from memory, decodes them, and executes them. It contains the ALU, Control Unit, and registers."
+    },
+    {
+      "term": "ALU (Arithmetic Logic Unit)",
+      "definition": "The part of the CPU that performs all arithmetic calculations (addition, subtraction, multiplication, division) and logical comparisons (greater than, equal to, etc.)."
+    },
+    {
+      "term": "CU (Control Unit)",
+      "definition": "The part of the CPU that directs and coordinates all activities inside the computer — it fetches instructions, decodes them, and signals other components to execute them."
+    },
+    {
+      "term": "RAM (Random Access Memory)",
+      "definition": "Fast, temporary (volatile) primary memory that stores data and programs currently in use. All contents are lost when the computer is switched off."
+    },
+    {
+      "term": "ROM (Read-Only Memory)",
+      "definition": "Permanent (non-volatile) primary memory that stores the computer's startup instructions (BIOS). Its contents remain intact even when power is off."
+    },
+    {
+      "term": "Cache Memory",
+      "definition": "Extremely fast, small memory located between the CPU and RAM. It stores frequently accessed data so the CPU can retrieve it without waiting for slower RAM."
+    },
+    {
+      "term": "Volatile Memory",
+      "definition": "Memory that loses all stored data as soon as power is removed. RAM is the main example — any unsaved work disappears if the computer shuts down unexpectedly."
+    },
+    {
+      "term": "Non-Volatile Memory",
+      "definition": "Memory that retains data even when there is no power supply. Examples include ROM, hard disks, SSDs, and USB flash drives."
+    },
+    {
+      "term": "Firmware",
+      "definition": "Permanent software embedded directly into hardware chips. It provides low-level control for the device — for example, a router's operating instructions or a computer's BIOS chip."
+    },
+    {
+      "term": "System Software",
+      "definition": "Software that manages and controls computer hardware, providing a platform for application software. Includes the operating system, language translators, and utility programs."
+    },
+    {
+      "term": "Application Software",
+      "definition": "Software designed to help users perform specific tasks. Can be generic (MS Word, used for many purposes) or specific (IRCTC app, built only for railway bookings)."
+    },
+    {
+      "term": "Bit",
+      "definition": "The smallest unit of data in a computer, representing either 0 or 1. Eight bits make one byte."
+    },
+    {
+      "term": "Byte",
+      "definition": "A group of 8 bits. One byte can store one character (like the letter 'A'). Larger units — KB, MB, GB, TB — are multiples of 1024 bytes each."
+    },
+    {
+      "term": "BIOS",
+      "definition": "Basic Input/Output System — firmware stored in a ROM chip on the motherboard. It runs when the computer starts, checks hardware, and loads the operating system."
+    }
+  ],
+  "summary": "A computer system follows the IPO cycle — it accepts input, processes data, and produces output. The CPU is the heart of processing, consisting of the ALU (for calculations), the Control Unit (for directing operations), and registers (for instant data storage). Memory is divided into primary memory (fast RAM for current work and permanent ROM for boot instructions), cache (ultra-fast buffer between CPU and RAM), and secondary storage (permanent, large-capacity disks and drives). All units of storage are based on the bit and byte, scaling up through KB, MB, GB, TB, and PB. Hardware is the physical machinery; software — divided into system software (OS, utilities, translators) and application software (generic or specific) — gives it purpose. Firmware bridges the gap, permanently embedded in hardware chips to provide low-level control.",
+  "mcqs": [
+    {
+      "id": "ch01_q001",
+      "topic": "IPO Cycle",
+      "question": "In the IPO cycle, what does the letter 'P' stand for?",
+      "options": ["Printing", "Processing", "Programming", "Peripherals"],
+      "correct_index": 1,
+      "explanation": "IPO stands for Input-Process-Output. 'P' refers to Processing — the step where the computer performs calculations or operations on the input data to produce a result.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q002",
+      "topic": "CPU Components",
+      "question": "Which part of the CPU is responsible for performing arithmetic and logical operations?",
+      "options": ["Control Unit (CU)", "Cache Memory", "Arithmetic Logic Unit (ALU)", "Register"],
+      "correct_index": 2,
+      "explanation": "The ALU (Arithmetic Logic Unit) handles all mathematical calculations like addition and subtraction, and logical comparisons like checking if two values are equal. The CU manages instruction flow, not calculations.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q003",
+      "topic": "Computer Memory",
+      "question": "Riya was writing her science project on a computer and forgot to save. The electricity went off and all her work was lost. What type of memory was storing her work?",
+      "options": ["ROM", "Hard Disk", "RAM", "Cache"],
+      "correct_index": 2,
+      "explanation": "RAM (Random Access Memory) is volatile memory — it stores currently active data but loses everything when power is cut. Since Riya didn't save to the hard disk, her work vanished when the power went off.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q004",
+      "topic": "Computer Memory",
+      "question": "Which memory stores the BIOS and is non-volatile?",
+      "options": ["RAM", "Cache", "Virtual Memory", "ROM"],
+      "correct_index": 3,
+      "explanation": "ROM (Read-Only Memory) is non-volatile — it keeps its contents even without power. The BIOS (startup instructions) is stored in ROM so the computer knows how to boot up every time.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q005",
+      "topic": "Computer Memory",
+      "question": "How many bytes are in 1 Kilobyte (KB)?",
+      "options": ["100", "1000", "1024", "8"],
+      "correct_index": 2,
+      "explanation": "In computing, 1 KB = 1024 bytes (not 1000). This is because computers use binary (base-2) numbering, and 2^10 = 1024. Similarly, 1 MB = 1024 KB, and 1 GB = 1024 MB.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q006",
+      "topic": "Computer Memory",
+      "question": "Which memory acts as a fast buffer between the CPU and RAM, storing frequently used data?",
+      "options": ["ROM", "Cache Memory", "Hard Disk", "Virtual Memory"],
+      "correct_index": 1,
+      "explanation": "Cache memory is extremely fast but small, positioned between the CPU and RAM. It stores recently or frequently used data so the CPU can fetch it almost instantly without waiting for slower RAM.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch01_q007",
+      "topic": "Hardware and Software",
+      "question": "A school uses a software system specifically designed to manage student admissions, fees, and report cards. This is an example of:",
+      "options": ["Generic application software", "System software", "Specific application software", "Firmware"],
+      "correct_index": 2,
+      "explanation": "Specific application software is built for one particular organisation or purpose. A school management system is designed only for school administration tasks — unlike generic software (e.g. MS Excel) that can be used by anyone for many purposes.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch01_q008",
+      "topic": "Hardware and Software",
+      "question": "Which of the following is an example of system software?",
+      "options": ["Google Chrome browser", "VLC Media Player", "Linux Operating System", "Tally accounting software"],
+      "correct_index": 2,
+      "explanation": "The Linux Operating System is system software — it manages all hardware resources and provides a platform for other programs to run. Chrome, VLC, and Tally are all application software built for specific user tasks.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch01_q009",
+      "topic": "Characteristics of Computers",
+      "question": "A computer is said to be 'diligent' because:",
+      "options": [
+        "It can store large amounts of data",
+        "It can perform many different types of tasks",
+        "It never gets tired and works with the same accuracy at all times",
+        "It performs operations at very high speed"
+      ],
+      "correct_index": 2,
+      "explanation": "Diligence means the ability to work without fatigue. A computer maintains the same level of performance and accuracy whether it has been running for 5 minutes or 5 days, unlike humans who tire and make more mistakes over time.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch01_q010",
+      "topic": "Computer System and IPO Cycle",
+      "question": "Which generation of computers used integrated circuits (ICs)?",
+      "options": ["First generation", "Second generation", "Third generation", "Fourth generation"],
+      "correct_index": 2,
+      "explanation": "Third-generation computers (1964–1971) used Integrated Circuits (ICs), which packed many transistors on a single silicon chip. This made computers smaller, faster, and cheaper than the transistor-based second generation.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch01_q011",
+      "topic": "Hardware and Software",
+      "question": "Firmware is best described as:",
+      "options": [
+        "Software that can be downloaded from the internet",
+        "Hardware that processes data",
+        "Permanent software embedded inside hardware chips",
+        "An antivirus program"
+      ],
+      "correct_index": 2,
+      "explanation": "Firmware is software that is permanently stored inside hardware chips (like a ROM chip on a motherboard). It provides low-level control for the device — for example, the BIOS is firmware that runs every time your computer starts.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch01_q012",
+      "topic": "Computer Memory",
+      "question": "Arrange these memory units in correct order from smallest to largest:",
+      "options": [
+        "Bit → Byte → KB → MB → GB → TB",
+        "Byte → Bit → KB → MB → GB → TB",
+        "KB → Byte → Bit → MB → GB → TB",
+        "Bit → Byte → MB → KB → TB → GB"
+      ],
+      "correct_index": 0,
+      "explanation": "The correct order from smallest to largest is: Bit (0 or 1) → Byte (8 bits) → KB (1024 bytes) → MB (1024 KB) → GB (1024 MB) → TB (1024 GB). Each step is 1024 times the previous.",
+      "difficulty": "Easy"
+    }
+  ],
+  "coding_challenges": [],
+  "study_guide": {
+    "intro_by_keyword": {
+      "ipo": "The IPO cycle is the heartbeat of every computer — Input arrives (your keypress, a sensor reading, a file), the CPU Processes it (calculations, logic, comparisons), and Output is delivered (screen display, printed page, saved file).",
+      "cpu": "The CPU (Central Processing Unit) is the brain of the computer — it fetches instructions, decodes them, and executes them in a rapid never-ending cycle called the Fetch-Decode-Execute cycle.",
+      "memory": "Computer memory stores data your programs need right now. RAM is fast but temporary; ROM is permanent but read-only; cache is the fastest of all but tiny in size.",
+      "hardware": "Hardware is every physical component you can touch — from the keyboard you type on to the CPU chip inside. Software tells hardware what to do.",
+      "software": "Software is the invisible set of instructions that gives hardware purpose. Without software, a computer is just an expensive collection of metal and silicon."
+    },
+    "mnemonics_by_keyword": {
+      "ipo": "**IPO = I Put Output** — a silly phrase to remember Input → Process → Output.",
+      "cpu": "**FDE** — Fetch, Decode, Execute. The CPU repeats these three steps billions of times per second.",
+      "memory": "**RAM = Readily Available Memory** (unofficial, but useful!) — it's the memory always ready for the CPU. **ROM = Remains On Memory** — it keeps data even without power."
+    },
+    "did_you_know_by_keyword": {
+      "cpu": [
+        "India's PARAM Siddhi supercomputer uses tens of thousands of CPU cores working in parallel and ranked in the global Top 500 list of supercomputers.",
+        "A modern CPU transistor is smaller than a coronavirus — around 3–5 nanometres wide. Your fingernail grows faster than it takes to make one!"
+      ],
+      "memory": [
+        "The first computer with RAM (1952) had only 1,024 bytes — today a budget smartphone has 4,000,000,000 bytes (4 GB) of RAM!",
+        "If RAM were a whiteboard, ROM would be a textbook — you write on the whiteboard to work, but the textbook content stays forever."
+      ]
+    }
+  }
+}

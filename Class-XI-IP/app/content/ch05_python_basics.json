@@ -1,0 +1,323 @@
+{
+  "chapter": 5,
+  "title": "Getting Started with Python",
+  "slug": "python-basics",
+  "topics": [
+    "Introduction to Python",
+    "Variables and Data Types",
+    "Operators",
+    "Input and Output",
+    "Conditional Statements (if-elif-else)",
+    "Loops (for and while)",
+    "Functions",
+    "Strings",
+    "Debugging"
+  ],
+  "key_concepts": [
+    {
+      "term": "Variable",
+      "definition": "A named storage location in memory that holds a value. In Python, you don't need to declare the type — just assign: name = 'Riya', marks = 95, pi = 3.14."
+    },
+    {
+      "term": "Data Types",
+      "definition": "The kind of value a variable holds. Python's basic types: int (whole numbers), float (decimal numbers), str (text), bool (True or False). Use type() to check: type(95) → int."
+    },
+    {
+      "term": "Operator",
+      "definition": "A symbol that performs an operation. Arithmetic: +, -, *, /, // (floor div), % (modulo), ** (power). Comparison: ==, !=, >, <, >=, <=. Logical: and, or, not."
+    },
+    {
+      "term": "input() and print()",
+      "definition": "input() reads a string from the keyboard. print() displays output. For numbers, convert with int() or float(): marks = int(input('Enter marks: ')). f-strings: print(f'Hello {name}')."
+    },
+    {
+      "term": "if-elif-else",
+      "definition": "Conditional execution. Python uses indentation (spaces) instead of curly braces. 'if' checks the first condition; 'elif' checks additional conditions; 'else' runs if nothing matched."
+    },
+    {
+      "term": "for Loop",
+      "definition": "Iterates over a sequence (list, range, string). Example: for i in range(5): prints 0,1,2,3,4. range(1, 6) gives 1 to 5. Use for loops when you know how many times to repeat."
+    },
+    {
+      "term": "while Loop",
+      "definition": "Repeats as long as a condition is True. Use when you don't know in advance how many times to repeat. Always make sure the condition eventually becomes False — otherwise it's an infinite loop."
+    },
+    {
+      "term": "Function",
+      "definition": "A named, reusable block of code. Define with 'def'. Call by name. Functions can take parameters and return values. Helps avoid repeating code (DRY — Don't Repeat Yourself)."
+    },
+    {
+      "term": "String",
+      "definition": "A sequence of characters enclosed in single or double quotes. Strings are immutable. Useful operations: len(), upper(), lower(), strip(), split(), in (membership test), slicing s[1:4]."
+    },
+    {
+      "term": "Indentation",
+      "definition": "Python uses spaces (usually 4) to define code blocks instead of curly braces. Every line inside an if/for/while/def must be indented consistently. A wrong indent causes an IndentationError."
+    }
+  ],
+  "summary": "Python is an easy-to-learn, beginner-friendly programming language created by Guido van Rossum. Variables store data; Python figures out the type automatically. You control program flow with if-elif-else (decisions) and for/while loops (repetition). Functions let you organise and reuse code. Python uses indentation to define code blocks — this makes code clean and readable. Strings are used everywhere and have many powerful built-in methods.",
+  "mcqs": [
+    {
+      "id": "ch05_q001",
+      "topic": "Variables and Data Types",
+      "question": "What is the output of: print(type(3.14))?",
+      "options": [
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'str'>",
+        "<class 'double'>"
+      ],
+      "correct_index": 1,
+      "explanation": "3.14 is a decimal number, so Python stores it as a float. type(3.14) returns <class 'float'>.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q002",
+      "topic": "Operators",
+      "question": "What is the result of: 17 % 5?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "3.4"
+      ],
+      "correct_index": 1,
+      "explanation": "The % operator gives the remainder after division. 17 ÷ 5 = 3 remainder 2. So 17 % 5 = 2.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q003",
+      "topic": "Input and Output",
+      "question": "A student writes: age = input('Enter age: '). If they type 16, what is the data type of age?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "correct_index": 2,
+      "explanation": "input() ALWAYS returns a string, even if the user types a number. To use it as a number, convert it: age = int(input('Enter age: ')).",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q004",
+      "topic": "Conditional Statements",
+      "question": "What will this print?\nmarks = 75\nif marks >= 90:\n    print('A')\nelif marks >= 75:\n    print('B')\nelif marks >= 60:\n    print('C')\nelse:\n    print('F')",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "correct_index": 1,
+      "explanation": "75 is not >= 90 (skip A). 75 >= 75 is True — so it prints 'B' and stops. Even though 75 >= 60 is also True, elif only runs if the previous condition was False.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q005",
+      "topic": "Loops",
+      "question": "How many times does this loop print?\nfor i in range(2, 10, 3):\n    print(i)",
+      "options": [
+        "8 times",
+        "3 times",
+        "4 times",
+        "2 times"
+      ],
+      "correct_index": 1,
+      "explanation": "range(2, 10, 3) generates: 2, 5, 8 — then 11 > 10 so stops. That's 3 values, so it prints 3 times.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q006",
+      "topic": "Functions",
+      "question": "What is the output of this code?\ndef greet(name):\n    return 'Hello ' + name\n\nresult = greet('Priya')\nprint(result)",
+      "options": [
+        "Hello",
+        "Hello Priya",
+        "greet('Priya')",
+        "None"
+      ],
+      "correct_index": 1,
+      "explanation": "The function greet takes 'Priya', joins 'Hello ' + 'Priya' = 'Hello Priya', and returns it. The result is stored and then printed.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q007",
+      "topic": "Strings",
+      "question": "What does 'Informatics'[3:7] give?",
+      "options": [
+        "Info",
+        "orma",
+        "form",
+        "atio"
+      ],
+      "correct_index": 1,
+      "explanation": "String indexing: I(0)n(1)f(2)o(3)r(4)m(5)a(6)t(7)... Slice [3:7] = characters at index 3,4,5,6 = 'orma'.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": "ch05_q008",
+      "topic": "Loops",
+      "question": "What is wrong with this while loop?\ncount = 1\nwhile count < 5:\n    print(count)",
+      "options": [
+        "while is spelled wrong",
+        "count < 5 is wrong condition",
+        "count is never updated — it's an infinite loop",
+        "print should be inside if"
+      ],
+      "correct_index": 2,
+      "explanation": "count never changes inside the loop (no count = count + 1), so count < 5 is always True → infinite loop. Always update the loop variable!",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q009",
+      "topic": "Variables and Data Types",
+      "question": "What is the output?\na = 10\nb = 3\nprint(a // b)",
+      "options": [
+        "3.33",
+        "3",
+        "4",
+        "1"
+      ],
+      "correct_index": 1,
+      "explanation": "// is floor division — it divides and rounds DOWN to the nearest integer. 10 // 3 = 3 (not 3.33).",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q010",
+      "topic": "Strings",
+      "question": "What does 'cricket'.upper() return?",
+      "options": [
+        "Cricket",
+        "CRICKET",
+        "cricket",
+        "C"
+      ],
+      "correct_index": 1,
+      "explanation": "The upper() string method converts every character to uppercase. 'cricket'.upper() → 'CRICKET'.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q011",
+      "topic": "Conditional Statements",
+      "question": "Python uses ________ to define code blocks instead of curly braces {}.",
+      "options": [
+        "Semicolons",
+        "Parentheses",
+        "Indentation (spaces/tabs)",
+        "Square brackets"
+      ],
+      "correct_index": 2,
+      "explanation": "Python enforces indentation — all lines in a block must be consistently indented (usually 4 spaces). This makes Python code clean and readable.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q012",
+      "topic": "Functions",
+      "question": "What does a function without a return statement return?",
+      "options": [
+        "0",
+        "Empty string ''",
+        "None",
+        "An error"
+      ],
+      "correct_index": 2,
+      "explanation": "If a Python function has no return statement (or just 'return' with no value), it automatically returns None.",
+      "difficulty": "Medium"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch05_code_001",
+      "topic": "Variables and Output",
+      "title": "Student Report Card",
+      "description": "Create variables for a student's name, class, and three subject marks (Maths, Science, English). Calculate the total and average, then print a formatted report card.\n\nExample output:\n=== Report Card ===\nName: Arjun Sharma\nClass: XI-A\nMaths: 88\nScience: 92\nEnglish: 76\nTotal: 256\nAverage: 85.33\nResult: Pass",
+      "starter_code": "name = \"Arjun Sharma\"\nstd_class = \"XI-A\"\nmaths = 88\nscience = 92\nenglish = 76\n\ntotal = maths + science + english\naverage = total / 3\nresult = \"Pass\" if average >= 35 else \"Fail\"\n\nprint(\"=== Report Card ===\")\nprint(f\"Name: {name}\")\nprint(f\"Class: {std_class}\")\nprint(f\"Maths: {maths}\")\nprint(f\"Science: {science}\")\nprint(f\"English: {english}\")\nprint(f\"Total: {total}\")\nprint(f\"Average: {round(average, 2)}\")\nprint(f\"Result: {result}\")\n",
+      "expected_output": "=== Report Card ===\nName: Arjun Sharma\nClass: XI-A\nMaths: 88\nScience: 92\nEnglish: 76\nTotal: 256\nAverage: 85.33\nResult: Pass",
+      "hint": "Use f-strings to format the output. round(average, 2) rounds to 2 decimal places.",
+      "solution": "name = \"Arjun Sharma\"\nstd_class = \"XI-A\"\nmaths = 88\nscience = 92\nenglish = 76\ntotal = maths + science + english\naverage = total / 3\nresult = \"Pass\" if average >= 35 else \"Fail\"\nprint(\"=== Report Card ===\")\nprint(f\"Name: {name}\")\nprint(f\"Class: {std_class}\")\nprint(f\"Maths: {maths}\")\nprint(f\"Science: {science}\")\nprint(f\"English: {english}\")\nprint(f\"Total: {total}\")\nprint(f\"Average: {round(average, 2)}\")\nprint(f\"Result: {result}\")",
+      "xp": 15,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_code_002",
+      "topic": "Conditional Statements",
+      "title": "Even or Odd Checker",
+      "description": "Write a program that reads a number from the user and prints whether it is Even or Odd.\n\nExample:\nEnter a number: 7\n7 is Odd\n\nEnter a number: 12\n12 is Even",
+      "starter_code": "num = int(input(\"Enter a number: \"))\n\n# Use the modulo operator % to check if divisible by 2\nif num % 2 == 0:\n    print(f\"{num} is Even\")\nelse:\n    print(f\"{num} is Odd\")\n",
+      "expected_output": "7 is Odd",
+      "hint": "A number is even if it has no remainder when divided by 2. Use: num % 2 == 0.",
+      "solution": "num = int(input(\"Enter a number: \"))\nif num % 2 == 0:\n    print(f\"{num} is Even\")\nelse:\n    print(f\"{num} is Odd\")",
+      "xp": 10,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_code_003",
+      "topic": "Loops",
+      "title": "Multiplication Table",
+      "description": "Write a program that asks the user for a number and prints its multiplication table from 1 to 10.\n\nExample for input 5:\n5 x 1 = 5\n5 x 2 = 10\n...\n5 x 10 = 50",
+      "starter_code": "num = int(input(\"Enter a number: \"))\n\nfor i in range(1, 11):\n    print(f\"{num} x {i} = {num * i}\")\n",
+      "expected_output": "5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50",
+      "hint": "range(1, 11) gives numbers from 1 to 10. Multiply num × i in each iteration.",
+      "solution": "num = int(input(\"Enter a number: \"))\nfor i in range(1, 11):\n    print(f\"{num} x {i} = {num * i}\")",
+      "xp": 10,
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_code_004",
+      "topic": "Functions",
+      "title": "Simple Calculator",
+      "description": "Write a Python program with functions for add, subtract, multiply, and divide. The program should ask the user for two numbers and an operation, then call the appropriate function.\n\nExample:\nEnter first number: 20\nEnter second number: 4\nEnter operation (+, -, *, /): /\nResult: 5.0",
+      "starter_code": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    if b == 0:\n        return \"Cannot divide by zero!\"\n    return a / b\n\nnum1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second number: \"))\nop = input(\"Enter operation (+, -, *, /): \")\n\nif op == \"+\":\n    print(f\"Result: {add(num1, num2)}\")\nelif op == \"-\":\n    print(f\"Result: {subtract(num1, num2)}\")\nelif op == \"*\":\n    print(f\"Result: {multiply(num1, num2)}\")\nelif op == \"/\":\n    print(f\"Result: {divide(num1, num2)}\")\nelse:\n    print(\"Invalid operation\")\n",
+      "expected_output": "Result: 5.0",
+      "hint": "Each function takes two parameters a and b and returns a result. The main code reads inputs and calls the right function.",
+      "solution": "def add(a, b):\n    return a + b\ndef subtract(a, b):\n    return a - b\ndef multiply(a, b):\n    return a * b\ndef divide(a, b):\n    if b == 0:\n        return \"Cannot divide by zero!\"\n    return a / b\nnum1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second number: \"))\nop = input(\"Enter operation (+, -, *, /): \")\nif op == \"+\":\n    print(f\"Result: {add(num1, num2)}\")\nelif op == \"-\":\n    print(f\"Result: {subtract(num1, num2)}\")\nelif op == \"*\":\n    print(f\"Result: {multiply(num1, num2)}\")\nelif op == \"/\":\n    print(f\"Result: {divide(num1, num2)}\")\nelse:\n    print(\"Invalid operation\")",
+      "xp": 25,
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_code_005",
+      "topic": "Strings",
+      "title": "Palindrome Checker",
+      "description": "A palindrome reads the same forwards and backwards (e.g. 'madam', 'racecar', 'LEVEL'). Write a program that checks if a word is a palindrome (ignore case).\n\nExample:\nEnter word: Madam\nMadam is a Palindrome!\n\nEnter word: Python\nPython is NOT a Palindrome.",
+      "starter_code": "word = input(\"Enter word: \")\n\n# Convert to lowercase for case-insensitive comparison\nword_lower = word.lower()\n\n# Reverse the string using slicing: string[::-1]\nreversed_word = word_lower[::-1]\n\nif word_lower == reversed_word:\n    print(f\"{word} is a Palindrome!\")\nelse:\n    print(f\"{word} is NOT a Palindrome.\")\n",
+      "expected_output": "Madam is a Palindrome!",
+      "hint": "Use slicing with [::-1] to reverse a string. Convert to lowercase first using .lower() so 'Madam' and 'madam' are treated the same.",
+      "solution": "word = input(\"Enter word: \")\nword_lower = word.lower()\nreversed_word = word_lower[::-1]\nif word_lower == reversed_word:\n    print(f\"{word} is a Palindrome!\")\nelse:\n    print(f\"{word} is NOT a Palindrome.\")",
+      "xp": 20,
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_code_006",
+      "topic": "Loops and Conditions",
+      "title": "Guess the Number Game",
+      "description": "Write a number guessing game. The program picks a secret number (use 42 as the fixed secret). The user guesses until they get it right. Show 'Too high!' or 'Too low!' as hints.\n\nExample:\nGuess the number (1-100): 50\nToo high!\nGuess the number (1-100): 25\nToo low!\nGuess the number (1-100): 42\nCorrect! You got it in 3 guesses.",
+      "starter_code": "secret = 42\nguesses = 0\n\nwhile True:\n    guess = int(input(\"Guess the number (1-100): \"))\n    guesses += 1\n    \n    if guess == secret:\n        print(f\"Correct! You got it in {guesses} guesses.\")\n        break\n    elif guess > secret:\n        print(\"Too high!\")\n    else:\n        print(\"Too low!\")\n",
+      "expected_output": "Correct! You got it in 3 guesses.",
+      "hint": "Use a while True loop that only breaks when the guess is correct. Track guesses with a counter variable.",
+      "solution": "secret = 42\nguesses = 0\nwhile True:\n    guess = int(input(\"Guess the number (1-100): \"))\n    guesses += 1\n    if guess == secret:\n        print(f\"Correct! You got it in {guesses} guesses.\")\n        break\n    elif guess > secret:\n        print(\"Too high!\")\n    else:\n        print(\"Too low!\")",
+      "xp": 25,
+      "difficulty": "Medium"
+    }
+  ],
+  "study_guide": {
+    "intro_by_keyword": {
+      "python": "Python is a beginner-friendly, general-purpose programming language known for its simple, readable syntax.",
+      "algorithm": "An algorithm is a finite, ordered set of precise steps to solve a problem — like a recipe, but for a computer."
+    },
+    "mnemonics_by_keyword": {
+      "python": "**IPO** — Input, Process, Output. Every Python program (and every computer program) does these three things.",
+      "algorithm": "**FIFO** — Finite, Inputs/outputs, unambiguous steps, Output produced. A valid algorithm must satisfy all four."
+    },
+    "did_you_know_by_keyword": {
+      "python": [
+        "Python was named after the British comedy group ‘Monty Python’, not the snake! Creator Guido van Rossum was a fan.",
+        "Python is the most popular language for AI/ML and is used by Google, NASA, Netflix, and Instagram."
+      ],
+      "algorithm": [
+        "The word ‘algorithm’ comes from the name of 9th-century Persian mathematician Al-Khwarizmi, whose book introduced algebra to Europe.",
+        "Google’s search uses hundreds of algorithms working together — PageRank alone considers over 200 factors to rank a single result."
+      ]
+    }
+  }
+}

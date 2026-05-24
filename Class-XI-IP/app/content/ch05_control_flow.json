@@ -1,0 +1,330 @@
+{
+  "chapter": 5,
+  "title": "Control Flow Statements",
+  "slug": "control-flow",
+  "unit": "II",
+  "topics": [
+    {
+      "id": "flow-and-indentation",
+      "title": "Types of Flow and Indentation",
+      "content": "By default Python executes your code line by line from top to bottom — this is called sequential flow. When you want the program to make decisions, you use conditional flow with if/elif/else statements. When you want to repeat steps, you use iterative flow with for or while loops. Indentation (adding spaces at the start of a line) is mandatory in Python to define which lines belong to a block — Python uses 4 spaces as the standard. Unlike languages such as C or Java which use curly braces {}, Python relies entirely on indentation. If your indentation is wrong, Python raises an IndentationError before the program even runs."
+    },
+    {
+      "id": "if-if-else",
+      "title": "if and if-else Statements",
+      "content": "The if statement runs a block of code only when its condition is True. Write the condition after the keyword if, followed by a colon, then indent the block below it. For example: if num > 0: print(\"Positive\"). The if-else statement adds a second path: the else block runs when the condition is False. A common example is checking exam marks — if marks >= 33: print(\"Pass\") else: print(\"Fail\"). Conditions use comparison operators (==, !=, <, >, <=, >=) and can be combined with logical operators (and, or, not). Remember that a single = is assignment while == is comparison — confusing them is a very common mistake."
+    },
+    {
+      "id": "elif-nested-if",
+      "title": "if-elif-else and Nested if",
+      "content": "When you have more than two possibilities, use elif (short for 'else if') to check multiple conditions in sequence. Python checks each condition from top to bottom and runs only the first block whose condition is True — the remaining elif and else blocks are skipped. For example, a grade calculator can use: if marks >= 90: 'A1', elif marks >= 80: 'A2', elif marks >= 70: 'B1', else: 'Needs improvement'. Nested if means placing an if statement inside another if block. This is useful for complex decisions but should be kept to a minimum — too much nesting makes code hard to read. Always make sure each nested level has correct indentation."
+    },
+    {
+      "id": "for-loop-range",
+      "title": "for Loop and range()",
+      "content": "A for loop repeats a block of code for each item in a sequence — it runs a definite (known) number of times. The range() function generates a sequence of numbers: range(5) gives 0,1,2,3,4; range(1,6) gives 1,2,3,4,5; range(1,10,2) gives 1,3,5,7,9 (step of 2). You can also loop directly over a string (for ch in \"INDIA\": prints each letter one by one) or over a list (for item in [10,20,30]: processes each element). The loop variable takes the value of each item in turn. After the last item, the loop ends and Python continues with the next line after the loop block."
+    },
+    {
+      "id": "while-break-continue",
+      "title": "while Loop, break, and continue",
+      "content": "A while loop repeats a block as long as its condition remains True — it is used when you do not know in advance how many times to repeat. You must update the condition variable inside the loop; if you forget, the condition never becomes False and you get an infinite loop that runs forever. The break statement immediately exits the loop — useful when searching for an item and you want to stop as soon as it is found. The continue statement skips the remaining lines in the current iteration and jumps back to the top of the loop — useful when you want to ignore certain values. Always plan your loop carefully: define the starting value, update the variable, and set a clear exit condition."
+    }
+  ],
+  "key_concepts": [
+    {
+      "term": "Control Flow",
+      "definition": "The order in which Python executes statements. The three types are sequential (line by line), conditional (decision making with if/elif/else), and iterative (repetition with for/while)."
+    },
+    {
+      "term": "Indentation",
+      "definition": "Spaces at the start of a line that define which lines belong to a block in Python. Standard is 4 spaces. Python uses indentation instead of curly braces {}. Wrong indentation causes an IndentationError."
+    },
+    {
+      "term": "Conditional Statement",
+      "definition": "A statement that runs a code block only when a condition is True. Python's conditional statements are if, if-else, and if-elif-else."
+    },
+    {
+      "term": "Iterative Statement (Loop)",
+      "definition": "A statement that repeats a block of code. Python has two loop types: for (definite, known count) and while (indefinite, continues while condition is True)."
+    },
+    {
+      "term": "range()",
+      "definition": "A built-in function that generates a sequence of integers. range(stop), range(start, stop), or range(start, stop, step). Commonly used with for loops. Note that stop is excluded from the sequence."
+    },
+    {
+      "term": "break",
+      "definition": "A keyword that immediately exits the nearest enclosing loop. Execution continues with the first statement after the loop. Useful for stopping a search early when the answer is found."
+    },
+    {
+      "term": "continue",
+      "definition": "A keyword that skips the rest of the current loop iteration and jumps back to the loop's condition check or next item. Useful for filtering out unwanted values inside a loop."
+    },
+    {
+      "term": "Infinite Loop",
+      "definition": "A loop whose condition never becomes False, causing it to run forever. Commonly caused by forgetting to update the loop variable inside a while loop. Press Ctrl+C to stop an infinite loop."
+    },
+    {
+      "term": "elif",
+      "definition": "Short for 'else if'. Used to check additional conditions after the initial if. Python checks elif branches in order and runs only the first one whose condition is True."
+    },
+    {
+      "term": "Nested if",
+      "definition": "An if statement placed inside another if block. Useful for complex decisions but should be kept shallow to maintain readability. Each nested level must have correct indentation."
+    },
+    {
+      "term": "for Loop",
+      "definition": "A loop that iterates over a sequence (range, list, string, etc.). The loop variable takes each value in turn. Preferred when the number of repetitions is known in advance."
+    },
+    {
+      "term": "while Loop",
+      "definition": "A loop that repeats as long as a condition is True. Used when the number of repetitions is not known in advance. The condition must eventually become False to avoid an infinite loop."
+    }
+  ],
+  "summary": "Control flow determines the order in which a Python program executes its statements. Sequential flow is the default — line by line, top to bottom. Conditional flow uses if, elif, and else to make decisions based on conditions. Iterative flow uses for loops (for a definite number of repetitions using range() or sequences) and while loops (for an indefinite number of repetitions based on a condition). Indentation is mandatory in Python and replaces the curly braces used in other languages — wrong indentation causes an IndentationError. Inside loops, break exits immediately and continue skips the current iteration. An infinite loop occurs when the condition never becomes False — always make sure the loop variable is updated. These tools together let you write programs that can make decisions, repeat tasks, and process data.",
+  "mcqs": [
+    {
+      "id": "ch05_q001",
+      "topic": "for Loop and range()",
+      "question": "How many times does the loop 'for i in range(5):' execute?",
+      "options": [
+        "4 times",
+        "5 times",
+        "6 times",
+        "It depends on i"
+      ],
+      "correct_index": 1,
+      "explanation": "range(5) generates the sequence 0, 1, 2, 3, 4 — that is 5 values. So the loop body runs exactly 5 times.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q002",
+      "topic": "for Loop and range()",
+      "question": "What sequence does range(2, 10, 3) generate?",
+      "options": [
+        "2, 5, 8, 11",
+        "2, 5, 8",
+        "2, 4, 6, 8",
+        "3, 6, 9"
+      ],
+      "correct_index": 1,
+      "explanation": "range(start, stop, step) generates values starting at 2, adding 3 each time, and stopping before 10. So: 2, 5, 8. The next value would be 11 which is >= 10, so it stops.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q003",
+      "topic": "while Loop, break, and continue",
+      "question": "What does the break statement do inside a loop?",
+      "options": [
+        "Skips the current iteration and continues the loop",
+        "Pauses the loop for 1 second",
+        "Immediately exits the loop",
+        "Restarts the loop from the beginning"
+      ],
+      "correct_index": 2,
+      "explanation": "The break statement immediately exits the loop — Python jumps to the first line of code after the loop block. It does not restart or pause — it exits completely.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q004",
+      "topic": "while Loop, break, and continue",
+      "question": "What does the continue statement do inside a loop?",
+      "options": [
+        "Exits the loop immediately",
+        "Skips the rest of the current iteration and goes to the next one",
+        "Restarts the entire loop",
+        "Converts the loop to a while loop"
+      ],
+      "correct_index": 1,
+      "explanation": "The continue statement skips the remaining lines of the current iteration and goes back to the top of the loop (the condition check or next item). The loop continues — it does not exit.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q005",
+      "topic": "if-elif-else and Nested if",
+      "question": "A student scores 75 marks. Using the grading rule: if marks >= 90: 'A1', elif marks >= 80: 'A2', elif marks >= 70: 'B1', else: 'B2' — what grade does the student get?",
+      "options": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "correct_index": 2,
+      "explanation": "75 is not >= 90 (skip A1), not >= 80 (skip A2), but 75 IS >= 70 (B1 condition is True). So the grade is B1. Python stops checking after the first True condition.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q006",
+      "topic": "if-elif-else and Nested if",
+      "question": "Which keyword is used to check additional conditions after an initial 'if' in Python?",
+      "options": [
+        "else if",
+        "elseif",
+        "elif",
+        "otherwise"
+      ],
+      "correct_index": 2,
+      "explanation": "Python uses elif (not 'else if' as two words, which is used in other languages). elif is short for 'else if' and allows checking multiple conditions in sequence.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q007",
+      "topic": "Types of Flow and Indentation",
+      "question": "What does Python use to define code blocks instead of curly braces {}?",
+      "options": [
+        "Semicolons (;)",
+        "Indentation (spaces)",
+        "Parentheses ()",
+        "Square brackets []"
+      ],
+      "correct_index": 1,
+      "explanation": "Python uses indentation — typically 4 spaces — to define which lines belong to a block such as if, for, while, or def. This is mandatory; wrong indentation causes an IndentationError.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q008",
+      "topic": "while Loop, break, and continue",
+      "question": "What is the most common cause of an infinite while loop?",
+      "options": [
+        "Using break inside the loop",
+        "Forgetting to update the condition variable inside the loop",
+        "Using a comparison operator in the condition",
+        "Having too many lines inside the loop"
+      ],
+      "correct_index": 1,
+      "explanation": "A while loop runs as long as its condition is True. If you forget to update the variable that the condition checks, the condition never becomes False and the loop runs forever — an infinite loop.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q009",
+      "topic": "for Loop and range()",
+      "question": "What is the last value printed by: for i in range(1, 6): print(i)?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "range(1, 6) generates 1, 2, 3, 4, 5 — the stop value 6 is excluded. The loop prints each value, so the last one printed is 5.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q010",
+      "topic": "Types of Flow and Indentation",
+      "question": "What error does Python raise when the indentation in your code is incorrect?",
+      "options": [
+        "SyntaxError",
+        "IndentationError",
+        "TypeError",
+        "ValueError"
+      ],
+      "correct_index": 1,
+      "explanation": "Python raises an IndentationError when the indentation (spaces at the start of lines) is wrong or inconsistent. This is specific to Python because it uses indentation to define blocks.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q011",
+      "topic": "if and if-else Statements",
+      "question": "What will the following code print if num = -5?\nif num > 0:\n    print(\"Positive\")\nelse:\n    print(\"Not positive\")",
+      "options": [
+        "Positive",
+        "Not positive",
+        "Nothing",
+        "Error"
+      ],
+      "correct_index": 1,
+      "explanation": "-5 > 0 is False, so the if block is skipped and the else block runs. The output is 'Not positive'.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": "ch05_q012",
+      "topic": "for Loop and range()",
+      "question": "How many times does 'for ch in \"INDIA\":' iterate?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "It depends"
+      ],
+      "correct_index": 1,
+      "explanation": "The string 'INDIA' has 5 characters: I, N, D, I, A. A for loop over a string iterates once for each character, so it runs 5 times.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "ch05_q013",
+      "topic": "while Loop, break, and continue",
+      "question": "In a while loop searching for a number in a list, you use 'break' when the number is found. What happens to the loop?",
+      "options": [
+        "It continues checking the remaining items",
+        "It restarts from the first item",
+        "It exits immediately, skipping the remaining items",
+        "It prints an error"
+      ],
+      "correct_index": 2,
+      "explanation": "break immediately exits the loop. This is efficient when searching — once you find what you need, there is no point checking the remaining items.",
+      "difficulty": "Medium"
+    }
+  ],
+  "coding_challenges": [
+    {
+      "id": "ch05_c01",
+      "title": "Multiplication Table",
+      "description": "Ask the user to enter a number, then print its complete multiplication table from 1 to 10 using a for loop. Format each line neatly, for example: '7 x 3 = 21'.",
+      "starter_code": "# Multiplication Table Generator\n\nn = int(input(\"Enter a number: \"))\n\n# Print the heading\nprint(f\"\nMultiplication Table of {n}\")\nprint(\"-\" * 25)\n\n# Use a for loop to print the table from 1 to 10\n# Format each line as: \"7 x  1 =  7\"\n# YOUR CODE HERE",
+      "expected_output": "Enter a number: 7\n\nMultiplication Table of 7\n-------------------------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70",
+      "hint": "Inside the for loop, use: print(f\"{num} x {i} = {num * i}\"). The range(1, 11) gives you i values from 1 to 10.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter a number: 7\n\nMultiplication Table of 7\n-------------------------\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70",
+          "stdin_values": [
+            "7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch05_c02",
+      "title": "Sum of Digits",
+      "description": "Ask the user to enter a positive integer, then calculate and print the sum of its digits using a while loop. For example, if the user enters 1234, the sum is 1+2+3+4 = 10. Use the modulo operator (%) to extract the last digit and floor division (//) to remove it.",
+      "starter_code": "# Sum of Digits of a Number\n\nnum = int(input(\"Enter a positive integer: \"))\n\n# Use a while loop to extract and sum each digit\n# YOUR CODE HERE\n\n# Print the result\n# YOUR CODE HERE",
+      "expected_output": "Enter a positive integer: 1234\nSum of digits of 1234 = 10",
+      "hint": "The key trick: num % 10 gives the last digit (1234 % 10 = 4), and num // 10 removes it (1234 // 10 = 123). Repeat until num becomes 0.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter a positive integer: 1234\nSum of digits of 1234 = 10",
+          "stdin_values": [
+            "1234"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch05_c03",
+      "title": "CBSE Grade Calculator",
+      "description": "Ask the user to enter their marks (0 to 100), then use if-elif-else to print the CBSE grade. Grading: A1 (90 and above), A2 (80-89), B1 (70-79), B2 (60-69), C (50-59), D (33-49), E (below 33, Fail). Also print a friendly message with each grade.",
+      "starter_code": "# Grade Calculator (CBSE grading scale)\n\nmarks = int(input(\"Enter your marks (0-100): \"))\nprint(f\"Marks: {marks}\")\n\n# Determine grade and message using if/elif/else\n# CBSE grading:\n# 91-100 → A1, \"Outstanding!\"\n# 81-90  → A2, \"Excellent!\"\n# 71-80  → B1, \"Very Good!\"\n# 61-70  → B2, \"Good!\"\n# 51-60  → C1, \"Average\"\n# 41-50  → C2, \"Below Average\"\n# 33-40  → D,  \"Pass\"\n# 0-32   → E,  \"Fail - Please work harder\"\n# YOUR CODE HERE\n\n# Print the grade and message\n# YOUR CODE HERE",
+      "expected_output": "Enter your marks (0-100): 75\nMarks: 75\nGrade: B1\nMessage: Good job, keep improving!",
+      "hint": "Use elif marks >= 70: for B1, elif marks >= 60: for B2, elif marks >= 50: for C, elif marks >= 33: for D, and else: for E. Python checks conditions in order and runs only the first True one.",
+      "test_cases": [
+        {
+          "label": "Expected output",
+          "expected_output": "Enter your marks (0-100): 75\nMarks: 75\nGrade: B1\nMessage: Good job, keep improving!",
+          "stdin_values": [
+            "75"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch05_c04",
+      "title": "Number Pattern — Star Triangle",
+      "description": "Print a right-angled triangle of stars using nested for loops. The triangle should have 5 rows, with row 1 having 1 star, row 2 having 2 stars, and so on up to row 5 which has 5 stars. Each row of stars should be on its own line.",
+      "starter_code": "# Print a right-angled triangle star pattern\n# 5 rows: first row 1 star, last row 5 stars\n\n# Use nested loops or a single loop with string multiplication\n# YOUR CODE HERE",
+      "expected_output": "*\n**\n***\n****\n*****",
+      "hint": "The key is the inner loop: range(row) runs 'row' times. So when row=1 it prints 1 star, when row=2 it prints 2 stars, etc. The print() at the end of the outer loop adds a newline.",
+      "test_cases": []
+    }
+  ]
+}
